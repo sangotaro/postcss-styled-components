@@ -1,26 +1,17 @@
 {
-  "name": "@stylelint/postcss-css-in-js",
-  "version": "0.37.2",
-  "description": "PostCSS syntax for parsing CSS in JS literals",
+  "name": "postcss-styled-components",
+  "version": "0.0.1",
+  "description": "PostCSS syntax for parsing styled-components",
   "keywords": [
     "postcss",
     "syntax",
-    "emotion",
-    "aphrodite",
-    "glamor",
-    "glamorous",
-    "react-native",
-    "react-style",
-    "reactcss",
     "styled-components",
-    "styletron-react",
-    "typestyle",
     "css-in-js",
     "css"
   ],
-  "repository": "stylelint/postcss-css-in-js",
+  "repository": "sangotaro/postcss-styled-components",
   "license": "MIT",
-  "author": "gucong3000",
+  "author": "sangotaro",
   "main": "index.js",
   "files": [
     "*.js"
