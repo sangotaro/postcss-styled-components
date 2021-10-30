@@ -1,6 +1,6 @@
 'use strict';
 
-const syntax = require('../');
+const syntax = require('../lib');
 
 describe('react', () => {
 	it('first line indentation handle', () => {

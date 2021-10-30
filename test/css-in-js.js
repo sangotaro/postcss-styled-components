@@ -3,7 +3,7 @@
 const autoprefixer = require('autoprefixer');
 const cases = require('postcss-parser-tests');
 const JSON5 = require('json5');
-const objectStringify = require('../object-stringify');
+const objectStringify = require('../lib/object-stringify');
 const postcss = require('postcss');
 const syntax = require('../');
 

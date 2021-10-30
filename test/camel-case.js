@@ -1,7 +1,7 @@
 'use strict';
 
-const camelCase = require('../camel-case');
-const unCamelCase = require('../un-camel-case');
+const camelCase = require('../lib/camel-case');
+const unCamelCase = require('../lib/un-camel-case');
 
 const data = {
 	borderTopLeftRadius: 'border-top-left-radius',

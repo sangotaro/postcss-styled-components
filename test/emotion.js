@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs');
-const syntax = require('../');
+const syntax = require('../lib');
 
 describe('javascript tests', () => {
 	it('react-emotion', () => {
@@ -75,7 +75,7 @@ describe('javascript tests', () => {
 		// - https://github.com/stylelint/postcss-css-in-js/issues/22
 		const parsed = syntax.parse(`
 			import styled from 'vue-emotion';
-			
+
 			const Wrapper = styled('div')\`
 				left: 0;
 				top: 0;
@@ -90,7 +90,7 @@ describe('javascript tests', () => {
 	it('works with @emotion/styled', () => {
 		const parsed = syntax.parse(`
 			import styled from '@emotion/styled';
-			
+
 			const Wrapper = styled.div\`
 				left: 0;
 			\`;
@@ -111,12 +111,12 @@ describe('javascript tests', () => {
 				width: 100,
 				padding: 40,
 			};
-			
+
 			const notInline = {
 				...spreaded,
 				margin: 60,
 			};
-			
+
 			const Component = () => (
 				<div css={{
 					...spreaded,
@@ -145,13 +145,13 @@ describe('javascript tests', () => {
 				width: 100,
 				padding: 40,
 			}
-			
+
 			const notInline = theme => ({
 				...spreaded,
 				margin: 60,
 				color: theme.color.primary,
 			});
-			
+
 			const Component = () => (
 				<div css={theme => ({
 					...spreaded,
