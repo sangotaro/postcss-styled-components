@@ -1,7 +1,7 @@
 'use strict';
 
 const getTemplate = require('./get-template');
-const loadSyntax = require('postcss-syntax/load-syntax');
+const loadSyntax = require('./lib/postcss-syntax/load-syntax');
 const { parse, types, traverse, loadOptions } = require('@babel/core');
 
 const isStyleSheetCreate = expectAdjacentSibling(['create']);
@@ -160,7 +160,6 @@ function literalParser(source, opts, styles) {
 	try {
 		ast = parse(source, loadBabelOpts(opts));
 	} catch (ex) {
-		// console.error(ex);
 		return styles || [];
 	}
 
