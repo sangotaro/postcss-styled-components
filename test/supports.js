@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const syntax = require('../');
+const syntax = require('../lib');
 
 function clean(node) {
 	if (node.raws) {

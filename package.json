@@ -12,10 +12,9 @@
   "repository": "sangotaro/postcss-styled-components",
   "license": "MIT",
   "author": "sangotaro",
-  "main": "index.js",
+  "main": "lib/index.js",
   "files": [
-    "lib",
-    "*.js"
+    "lib"
   ],
   "scripts": {
     "format": "prettier . --write",

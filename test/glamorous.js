@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs');
-const syntax = require('../');
+const syntax = require('../lib');
 
 describe('javascript tests', () => {
 	it('glamorous', () => {
