@@ -34,13 +34,7 @@ function clean(node) {
 
 describe('should support for each CSS in JS package', () => {
 	[
-		'emotion-10.jsx',
-		'glamorous.jsx',
 		'interpolation-content.mjs',
-		'jsx.jsx',
-		'lit-css.mjs',
-		'react-emotion.jsx',
-		'react-native.mjs',
 		'styled-components-nesting-expr.js',
 		'styled-components-nesting.js',
 		'styled-components-nesting2.js',
@@ -48,13 +42,11 @@ describe('should support for each CSS in JS package', () => {
 		'styled-components-nesting-nesting.js',
 		'styled-components-nesting-template-literal.js',
 		'styled-components.js',
-		'styled-opts.mjs',
 		'styled-props.jsx',
 		'tpl-decl.mjs',
 		'tpl-in-tpl.mjs',
 		'tpl-selector.mjs',
 		'tpl-special.mjs',
-		'material-ui.jsx',
 	].forEach((file) => {
 		it(`${file}`, () => {
 			file = require.resolve(`./fixtures/${file}`);
