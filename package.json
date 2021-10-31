@@ -59,7 +59,7 @@
     "codecov": "3.8.3",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
-    "eslint-config-stylelint": "13.1.0",
+    "eslint-config-stylelint": "14.0.0",
     "jest": "27.3.1",
     "json5": "2.2.0",
     "np": "7.5.0",
