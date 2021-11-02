@@ -17,16 +17,15 @@
     "lib"
   ],
   "scripts": {
-    "format": "prettier . --write",
+    "fmt": "prettier . --write",
     "lint": "npm-run-all --parallel lint:*",
-    "lint:formatting": "prettier . --check",
+    "lint:fmt": "prettier . --check",
     "lint:js": "eslint . --cache --max-warnings=0",
     "lint:md": "remark . --quiet --frail",
     "release": "np",
     "test": "jest",
     "watch": "jest --watch"
   },
-  "prettier": "@stylelint/prettier-config",
   "eslintConfig": {
     "extends": [
       "stylelint"
@@ -55,7 +54,6 @@
     "postcss-safe-parser": "6.0.0"
   },
   "devDependencies": {
-    "@stylelint/prettier-config": "2.0.0",
     "@stylelint/remark-preset": "2.0.0",
     "autoprefixer": "9.8.6",
     "codecov": "3.8.3",
