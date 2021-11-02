@@ -41,26 +41,26 @@ const syntax = require("postcss-syntax")({
   rules: [
     {
       test: /\.(?:[sx]?html?|[sx]ht|vue|ux|php)$/i,
-      extract: "html"
+      extract: "html",
     },
     {
       test: /\.(?:markdown|md)$/i,
-      extract: "markdown"
+      extract: "markdown",
     },
     {
       test: /\.(?:[cm]?[jt]sx?|es\d*|pac)$/i,
-      extract: "jsx"
+      extract: "jsx",
     },
     {
       // custom language for file extension
       test: /\.postcss$/i,
-      lang: "scss"
+      lang: "scss",
     },
     {
       // custom language for file extension
       test: /\.customcss$/i,
-      lang: "custom"
-    }
+      lang: "custom",
+    },
   ],
 
   // custom parser for CSS (using `postcss-safe-parser`)
@@ -74,7 +74,7 @@ const syntax = require("postcss-syntax")({
   // custom parser for SugarSS
   sugarss: require("sugarss"),
   // custom parser for custom language
-  custom: require("postcss-custom-syntax")
+  custom: require("postcss-custom-syntax"),
 });
 postcss(plugins)
   .process(source, { syntax: syntax })
