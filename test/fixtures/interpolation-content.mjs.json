@@ -1,11 +1,14 @@
 {
-	"raws": {},
+	"raws": {
+		"afterEnd": "`;\n"
+	},
 	"type": "root",
 	"nodes": [
 		{
 			"raws": {
 				"semicolon": true,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "import styled, { css } from \"styled-components\";\n\nexport const buttonStyles = css`"
 			},
 			"type": "root",
 			"nodes": [
@@ -16,14 +19,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 4,
 							"column": 2
 						},
-						"input": {
-							"file": "interpolation-content.mjs"
-						},
 						"end": {
+							"offset": 23,
 							"line": 4,
 							"column": 23
 						}
@@ -33,22 +36,21 @@
 				}
 			],
 			"source": {
-				"input": {
-					"file": "interpolation-content.mjs"
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 3,
 					"column": 33
-				},
-				"inline": false,
-				"lang": "css",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		},
 		{
 			"raws": {
 				"semicolon": true,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "`;\n\nexport const ButtonStyled1 = styled.button`"
 			},
 			"type": "root",
 			"nodes": [
@@ -59,22 +61,11 @@
 					"text": "${buttonStyles}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 8,
 							"column": 2
-						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 154,
-									"end": 156
-								},
-								{
-									"start": 171,
-									"end": 185
-								}
-							]
 						}
 					}
 				},
@@ -85,24 +76,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 19,
 							"line": 9,
 							"column": 2
 						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 154,
-									"end": 156
-								},
-								{
-									"start": 171,
-									"end": 185
-								}
-							]
-						},
 						"end": {
+							"offset": 29,
 							"line": 9,
 							"column": 12
 						}
@@ -112,32 +93,21 @@
 				}
 			],
 			"source": {
-				"input": {
-					"file": "interpolation-content.mjs",
-					"quasis": [
-						{
-							"start": 154,
-							"end": 156
-						},
-						{
-							"start": 171,
-							"end": 185
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 7,
 					"column": 44
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		},
 		{
 			"raws": {
 				"semicolon": true,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "`;\n\nexport const ButtonStyled2 = styled.button`"
 			},
 			"type": "root",
 			"nodes": [
@@ -149,22 +119,11 @@
 					"text": "${buttonStyles}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 13,
 							"column": 2
-						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 232,
-									"end": 234
-								},
-								{
-									"start": 249,
-									"end": 264
-								}
-							]
 						}
 					}
 				},
@@ -175,24 +134,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 20,
 							"line": 14,
 							"column": 2
 						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 232,
-									"end": 234
-								},
-								{
-									"start": 249,
-									"end": 264
-								}
-							]
-						},
 						"end": {
+							"offset": 30,
 							"line": 14,
 							"column": 12
 						}
@@ -202,32 +151,21 @@
 				}
 			],
 			"source": {
-				"input": {
-					"file": "interpolation-content.mjs",
-					"quasis": [
-						{
-							"start": 232,
-							"end": 234
-						},
-						{
-							"start": 249,
-							"end": 264
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 12,
 					"column": 44
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		},
 		{
 			"raws": {
 				"semicolon": false,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "`;\n\nexport const ButtonStyled3 = styled.button`"
 			},
 			"type": "root",
 			"nodes": [
@@ -238,24 +176,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 4,
 							"line": 19,
 							"column": 2
 						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 311,
-									"end": 328
-								},
-								{
-									"start": 343,
-									"end": 344
-								}
-							]
-						},
 						"end": {
+							"offset": 14,
 							"line": 19,
 							"column": 12
 						}
@@ -270,53 +198,31 @@
 					"text": "${buttonStyles}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 17,
 							"line": 20,
 							"column": 2
-						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 311,
-									"end": 328
-								},
-								{
-									"start": 343,
-									"end": 344
-								}
-							]
 						}
 					}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "interpolation-content.mjs",
-					"quasis": [
-						{
-							"start": 311,
-							"end": 328
-						},
-						{
-							"start": 343,
-							"end": 344
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 17,
 					"column": 44
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		},
 		{
 			"raws": {
 				"semicolon": false,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "`;\n\nexport const ButtonStyled4 = styled.button`"
 			},
 			"type": "root",
 			"nodes": [
@@ -327,24 +233,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 4,
 							"line": 25,
 							"column": 2
 						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 391,
-									"end": 408
-								},
-								{
-									"start": 423,
-									"end": 425
-								}
-							]
-						},
 						"end": {
+							"offset": 14,
 							"line": 25,
 							"column": 12
 						}
@@ -360,53 +256,31 @@
 					"text": "${buttonStyles}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 17,
 							"line": 26,
 							"column": 2
-						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 391,
-									"end": 408
-								},
-								{
-									"start": 423,
-									"end": 425
-								}
-							]
 						}
 					}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "interpolation-content.mjs",
-					"quasis": [
-						{
-							"start": 391,
-							"end": 408
-						},
-						{
-							"start": 423,
-							"end": 425
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 23,
 					"column": 44
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		},
 		{
 			"raws": {
 				"semicolon": true,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "`;\n\nexport const ButtonStyled5 = styled.button`"
 			},
 			"type": "root",
 			"nodes": [
@@ -417,22 +291,11 @@
 					"text": "${buttonStyles\n\t}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 30,
 							"column": 2
-						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 472,
-									"end": 474
-								},
-								{
-									"start": 491,
-									"end": 505
-								}
-							]
 						}
 					}
 				},
@@ -443,24 +306,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 21,
 							"line": 32,
 							"column": 2
 						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 472,
-									"end": 474
-								},
-								{
-									"start": 491,
-									"end": 505
-								}
-							]
-						},
 						"end": {
+							"offset": 31,
 							"line": 32,
 							"column": 12
 						}
@@ -470,32 +323,21 @@
 				}
 			],
 			"source": {
-				"input": {
-					"file": "interpolation-content.mjs",
-					"quasis": [
-						{
-							"start": 472,
-							"end": 474
-						},
-						{
-							"start": 491,
-							"end": 505
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 29,
 					"column": 44
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		},
 		{
 			"raws": {
 				"semicolon": true,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "`;\n\nexport const ButtonStyled6 = styled.button`"
 			},
 			"type": "root",
 			"nodes": [
@@ -507,22 +349,11 @@
 					"text": "${buttonStyles\n\t}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 36,
 							"column": 2
-						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 552,
-									"end": 554
-								},
-								{
-									"start": 571,
-									"end": 586
-								}
-							]
 						}
 					}
 				},
@@ -533,24 +364,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 22,
 							"line": 38,
 							"column": 2
 						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 552,
-									"end": 554
-								},
-								{
-									"start": 571,
-									"end": 586
-								}
-							]
-						},
 						"end": {
+							"offset": 32,
 							"line": 38,
 							"column": 12
 						}
@@ -560,32 +381,21 @@
 				}
 			],
 			"source": {
-				"input": {
-					"file": "interpolation-content.mjs",
-					"quasis": [
-						{
-							"start": 552,
-							"end": 554
-						},
-						{
-							"start": 571,
-							"end": 586
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 35,
 					"column": 44
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		},
 		{
 			"raws": {
 				"semicolon": false,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "`;\n\nexport const ButtonStyled7 = styled.button`"
 			},
 			"type": "root",
 			"nodes": [
@@ -596,24 +406,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 4,
 							"line": 43,
 							"column": 2
 						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 633,
-									"end": 650
-								},
-								{
-									"start": 667,
-									"end": 668
-								}
-							]
-						},
 						"end": {
+							"offset": 14,
 							"line": 43,
 							"column": 12
 						}
@@ -628,53 +428,31 @@
 					"text": "${buttonStyles\n\t}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 17,
 							"line": 44,
 							"column": 2
-						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 633,
-									"end": 650
-								},
-								{
-									"start": 667,
-									"end": 668
-								}
-							]
 						}
 					}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "interpolation-content.mjs",
-					"quasis": [
-						{
-							"start": 633,
-							"end": 650
-						},
-						{
-							"start": 667,
-							"end": 668
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 41,
 					"column": 44
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		},
 		{
 			"raws": {
 				"semicolon": false,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "`;\n\nexport const ButtonStyled8 = styled.button`"
 			},
 			"type": "root",
 			"nodes": [
@@ -685,24 +463,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 4,
 							"line": 50,
 							"column": 2
 						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 715,
-									"end": 732
-								},
-								{
-									"start": 749,
-									"end": 751
-								}
-							]
-						},
 						"end": {
+							"offset": 14,
 							"line": 50,
 							"column": 12
 						}
@@ -718,58 +486,84 @@
 					"text": "${buttonStyles\n\t}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 17,
 							"line": 51,
 							"column": 2
-						},
-						"input": {
-							"file": "interpolation-content.mjs",
-							"quasis": [
-								{
-									"start": 715,
-									"end": 732
-								},
-								{
-									"start": 749,
-									"end": 751
-								}
-							]
 						}
 					}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "interpolation-content.mjs",
-					"quasis": [
-						{
-							"start": 715,
-							"end": 732
-						},
-						{
-							"start": 749,
-							"end": 751
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 48,
 					"column": 44
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		}
 	],
 	"source": {
-		"input": {
-			"file": "interpolation-content.mjs"
-		},
+		"inputId": 0,
 		"start": {
 			"line": 1,
 			"column": 1
+		}
+	},
+	"inputs": [
+		{
+			"hasBOM": false,
+			"css": "\n\tdisplay: inline-block;\n",
+			"file": "interpolation-content.mjs"
 		},
-		"lang": "jsx"
-	}
+		{
+			"hasBOM": false,
+			"css": "\n\t${buttonStyles}\n\tcolor: red;\n",
+			"file": "interpolation-content.mjs"
+		},
+		{
+			"hasBOM": false,
+			"css": "\n\t${buttonStyles};\n\tcolor: red;\n",
+			"file": "interpolation-content.mjs"
+		},
+		{
+			"hasBOM": false,
+			"css": "\n;\n\tcolor: red;\n\t${buttonStyles}\n",
+			"file": "interpolation-content.mjs"
+		},
+		{
+			"hasBOM": false,
+			"css": "\n;\n\tcolor: red;\n\t${buttonStyles};\n",
+			"file": "interpolation-content.mjs"
+		},
+		{
+			"hasBOM": false,
+			"css": "\n\t${buttonStyles\n\t}\n\tcolor: red;\n",
+			"file": "interpolation-content.mjs"
+		},
+		{
+			"hasBOM": false,
+			"css": "\n\t${buttonStyles\n\t};\n\tcolor: red;\n",
+			"file": "interpolation-content.mjs"
+		},
+		{
+			"hasBOM": false,
+			"css": "\n;\n\tcolor: red;\n\t${buttonStyles\n\t}\n",
+			"file": "interpolation-content.mjs"
+		},
+		{
+			"hasBOM": false,
+			"css": "\n;\n\tcolor: red;\n\t${buttonStyles\n\t};\n",
+			"file": "interpolation-content.mjs"
+		},
+		{
+			"hasBOM": false,
+			"css": "import styled, { css } from \"styled-components\";\n\nexport const buttonStyles = css`\n\tdisplay: inline-block;\n`;\n\nexport const ButtonStyled1 = styled.button`\n\t${buttonStyles}\n\tcolor: red;\n`;\n\nexport const ButtonStyled2 = styled.button`\n\t${buttonStyles};\n\tcolor: red;\n`;\n\nexport const ButtonStyled3 = styled.button`\n;\n\tcolor: red;\n\t${buttonStyles}\n`;\n\nexport const ButtonStyled4 = styled.button`\n;\n\tcolor: red;\n\t${buttonStyles};\n`;\n\nexport const ButtonStyled5 = styled.button`\n\t${buttonStyles\n\t}\n\tcolor: red;\n`;\n\nexport const ButtonStyled6 = styled.button`\n\t${buttonStyles\n\t};\n\tcolor: red;\n`;\n\nexport const ButtonStyled7 = styled.button`\n;\n\tcolor: red;\n\t${buttonStyles\n\t}\n`;\n\nexport const ButtonStyled8 = styled.button`\n;\n\tcolor: red;\n\t${buttonStyles\n\t};\n`;\n",
+			"file": "interpolation-content.mjs"
+		}
+	]
 }

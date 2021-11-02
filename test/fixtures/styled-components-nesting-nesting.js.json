@@ -1,11 +1,14 @@
 {
-	"raws": {},
+	"raws": {
+		"afterEnd": "`;\n"
+	},
 	"type": "root",
 	"nodes": [
 		{
 			"raws": {
 				"semicolon": false,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "import styled, { css } from 'styled-components';\nconst Message1 = styled.p`"
 			},
 			"type": "root",
 			"nodes": [
@@ -16,24 +19,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 3,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting-nesting.js",
-							"quasis": [
-								{
-									"start": 75,
-									"end": 93
-								},
-								{
-									"start": 157,
-									"end": 158
-								}
-							]
-						},
 						"end": {
+							"offset": 15,
 							"line": 3,
 							"column": 15
 						}
@@ -48,29 +41,20 @@
 					"text": "${css`\n\t\tcolor: #b02d00;\n\t\t${css`\n\t\t\tbackground: white;\n\t\t`}\n\t`}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 18,
 							"line": 4,
 							"column": 2
-						},
-						"input": {
-							"file": "styled-components-nesting-nesting.js",
-							"quasis": [
-								{
-									"start": 75,
-									"end": 93
-								},
-								{
-									"start": 157,
-									"end": 158
-								}
-							]
 						}
 					},
 					"nodes": [
 						{
 							"raws": {
 								"semicolon": false,
-								"after": "\n\t"
+								"after": "\n\t",
+								"beforeStart": "${css`",
+								"afterEnd": "`}"
 							},
 							"type": "root",
 							"nodes": [
@@ -81,24 +65,14 @@
 									},
 									"type": "decl",
 									"source": {
+										"inputId": 0,
 										"start": {
+											"offset": 3,
 											"line": 5,
 											"column": 3
 										},
-										"input": {
-											"file": "styled-components-nesting-nesting.js",
-											"quasis": [
-												{
-													"start": 99,
-													"end": 120
-												},
-												{
-													"start": 153,
-													"end": 155
-												}
-											]
-										},
 										"end": {
+											"offset": 17,
 											"line": 5,
 											"column": 17
 										}
@@ -113,29 +87,20 @@
 									"text": "${css`\n\t\t\tbackground: white;\n\t\t`}",
 									"type": "literal",
 									"source": {
+										"inputId": 0,
 										"start": {
+											"offset": 21,
 											"line": 6,
 											"column": 3
-										},
-										"input": {
-											"file": "styled-components-nesting-nesting.js",
-											"quasis": [
-												{
-													"start": 99,
-													"end": 120
-												},
-												{
-													"start": 153,
-													"end": 155
-												}
-											]
 										}
 									},
 									"nodes": [
 										{
 											"raws": {
 												"semicolon": true,
-												"after": "\n\t\t"
+												"after": "\n\t\t",
+												"beforeStart": "${css`",
+												"afterEnd": "`}"
 											},
 											"type": "root",
 											"nodes": [
@@ -146,14 +111,14 @@
 													},
 													"type": "decl",
 													"source": {
+														"inputId": 0,
 														"start": {
+															"offset": 4,
 															"line": 7,
 															"column": 4
 														},
-														"input": {
-															"file": "styled-components-nesting-nesting.js"
-														},
 														"end": {
+															"offset": 21,
 															"line": 7,
 															"column": 21
 														}
@@ -163,78 +128,76 @@
 												}
 											],
 											"source": {
-												"input": {
-													"file": "styled-components-nesting-nesting.js"
-												},
+												"inputId": 0,
 												"start": {
+													"offset": 0,
 													"line": 6,
 													"column": 9
-												},
-												"inline": false,
-												"lang": "css"
-											}
+												}
+											},
+											"lastEach": 3,
+											"indexes": {}
 										}
-									]
+									],
+									"lastEach": 2,
+									"indexes": {}
 								}
 							],
 							"source": {
-								"input": {
-									"file": "styled-components-nesting-nesting.js",
-									"quasis": [
-										{
-											"start": 99,
-											"end": 120
-										},
-										{
-											"start": 153,
-											"end": 155
-										}
-									]
-								},
+								"inputId": 0,
 								"start": {
+									"offset": 0,
 									"line": 4,
 									"column": 8
-								},
-								"inline": false,
-								"lang": "template-literal",
-								"syntax": {}
-							}
+								}
+							},
+							"lastEach": 2,
+							"indexes": {}
 						}
-					]
+					],
+					"lastEach": 1,
+					"indexes": {}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "styled-components-nesting-nesting.js",
-					"quasis": [
-						{
-							"start": 75,
-							"end": 93
-						},
-						{
-							"start": 157,
-							"end": 158
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 2,
 					"column": 27
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		}
 	],
 	"source": {
-		"input": {
-			"file": "styled-components-nesting-nesting.js"
-		},
+		"inputId": 0,
 		"start": {
 			"line": 1,
 			"column": 1
+		}
+	},
+	"inputs": [
+		{
+			"hasBOM": false,
+			"css": "\n\tpadding: 10px;\n\t${css`\n\t\tcolor: #b02d00;\n\t\t${css`\n\t\t\tbackground: white;\n\t\t`}\n\t`}\n",
+			"file": "styled-components-nesting-nesting.js"
 		},
-		"lang": "jsx"
-	}
+		{
+			"hasBOM": false,
+			"css": "\n\t\tcolor: #b02d00;\n\t\t${css`\n\t\t\tbackground: white;\n\t\t`}\n\t",
+			"file": "styled-components-nesting-nesting.js"
+		},
+		{
+			"hasBOM": false,
+			"css": "\n\t\t\tbackground: white;\n\t\t",
+			"file": "styled-components-nesting-nesting.js"
+		},
+		{
+			"hasBOM": false,
+			"css": "import styled, { css } from 'styled-components';\nconst Message1 = styled.p`\n\tpadding: 10px;\n\t${css`\n\t\tcolor: #b02d00;\n\t\t${css`\n\t\t\tbackground: white;\n\t\t`}\n\t`}\n`;\n",
+			"file": "styled-components-nesting-nesting.js"
+		}
+	]
 }

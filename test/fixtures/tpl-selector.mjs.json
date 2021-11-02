@@ -1,11 +1,14 @@
 {
-	"raws": {},
+	"raws": {
+		"afterEnd": "`;\n"
+	},
 	"type": "root",
 	"nodes": [
 		{
 			"raws": {
 				"semicolon": false,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "import styled from \"styled-components\";\n\nconst selector = \"div\";\n\nexport const Row = styled.div`"
 			},
 			"type": "root",
 			"nodes": [
@@ -25,44 +28,14 @@
 							},
 							"type": "decl",
 							"source": {
+								"inputId": 0,
 								"start": {
+									"offset": 20,
 									"line": 7,
 									"column": 3
 								},
-								"input": {
-									"file": "tpl-selector.mjs",
-									"quasis": [
-										{
-											"start": 96,
-											"end": 98
-										},
-										{
-											"start": 109,
-											"end": 137
-										},
-										{
-											"start": 148,
-											"end": 172
-										},
-										{
-											"start": 183,
-											"end": 213
-										},
-										{
-											"start": 224,
-											"end": 248
-										},
-										{
-											"start": 259,
-											"end": 291
-										},
-										{
-											"start": 302,
-											"end": 325
-										}
-									]
-								},
 								"end": {
+									"offset": 33,
 									"line": 7,
 									"column": 16
 								}
@@ -72,49 +45,21 @@
 						}
 					],
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 6,
 							"column": 2
 						},
-						"input": {
-							"file": "tpl-selector.mjs",
-							"quasis": [
-								{
-									"start": 96,
-									"end": 98
-								},
-								{
-									"start": 109,
-									"end": 137
-								},
-								{
-									"start": 148,
-									"end": 172
-								},
-								{
-									"start": 183,
-									"end": 213
-								},
-								{
-									"start": 224,
-									"end": 248
-								},
-								{
-									"start": 259,
-									"end": 291
-								},
-								{
-									"start": 302,
-									"end": 325
-								}
-							]
-						},
 						"end": {
+							"offset": 36,
 							"line": 8,
 							"column": 2
 						}
 					},
-					"selector": "${selector} a"
+					"selector": "${selector} a",
+					"lastEach": 1,
+					"indexes": {}
 				},
 				{
 					"raws": {
@@ -132,44 +77,14 @@
 							},
 							"type": "decl",
 							"source": {
+								"inputId": 0,
 								"start": {
+									"offset": 57,
 									"line": 10,
 									"column": 3
 								},
-								"input": {
-									"file": "tpl-selector.mjs",
-									"quasis": [
-										{
-											"start": 96,
-											"end": 98
-										},
-										{
-											"start": 109,
-											"end": 137
-										},
-										{
-											"start": 148,
-											"end": 172
-										},
-										{
-											"start": 183,
-											"end": 213
-										},
-										{
-											"start": 224,
-											"end": 248
-										},
-										{
-											"start": 259,
-											"end": 291
-										},
-										{
-											"start": 302,
-											"end": 325
-										}
-									]
-								},
 								"end": {
+									"offset": 70,
 									"line": 10,
 									"column": 16
 								}
@@ -179,49 +94,21 @@
 						}
 					],
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 39,
 							"line": 9,
 							"column": 2
 						},
-						"input": {
-							"file": "tpl-selector.mjs",
-							"quasis": [
-								{
-									"start": 96,
-									"end": 98
-								},
-								{
-									"start": 109,
-									"end": 137
-								},
-								{
-									"start": 148,
-									"end": 172
-								},
-								{
-									"start": 183,
-									"end": 213
-								},
-								{
-									"start": 224,
-									"end": 248
-								},
-								{
-									"start": 259,
-									"end": 291
-								},
-								{
-									"start": 302,
-									"end": 325
-								}
-							]
-						},
 						"end": {
+							"offset": 73,
 							"line": 11,
 							"column": 2
 						}
 					},
-					"selector": "a ${selector}"
+					"selector": "a ${selector}",
+					"lastEach": 1,
+					"indexes": {}
 				},
 				{
 					"raws": {
@@ -239,44 +126,14 @@
 							},
 							"type": "decl",
 							"source": {
+								"inputId": 0,
 								"start": {
+									"offset": 95,
 									"line": 14,
 									"column": 3
 								},
-								"input": {
-									"file": "tpl-selector.mjs",
-									"quasis": [
-										{
-											"start": 96,
-											"end": 98
-										},
-										{
-											"start": 109,
-											"end": 137
-										},
-										{
-											"start": 148,
-											"end": 172
-										},
-										{
-											"start": 183,
-											"end": 213
-										},
-										{
-											"start": 224,
-											"end": 248
-										},
-										{
-											"start": 259,
-											"end": 291
-										},
-										{
-											"start": 302,
-											"end": 325
-										}
-									]
-								},
 								"end": {
+									"offset": 108,
 									"line": 14,
 									"column": 16
 								}
@@ -286,49 +143,21 @@
 						}
 					],
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 76,
 							"line": 12,
 							"column": 2
 						},
-						"input": {
-							"file": "tpl-selector.mjs",
-							"quasis": [
-								{
-									"start": 96,
-									"end": 98
-								},
-								{
-									"start": 109,
-									"end": 137
-								},
-								{
-									"start": 148,
-									"end": 172
-								},
-								{
-									"start": 183,
-									"end": 213
-								},
-								{
-									"start": 224,
-									"end": 248
-								},
-								{
-									"start": 259,
-									"end": 291
-								},
-								{
-									"start": 302,
-									"end": 325
-								}
-							]
-						},
 						"end": {
+							"offset": 111,
 							"line": 15,
 							"column": 2
 						}
 					},
-					"selector": "${selector}\n\ta"
+					"selector": "${selector}\n\ta",
+					"lastEach": 1,
+					"indexes": {}
 				},
 				{
 					"raws": {
@@ -346,44 +175,14 @@
 							},
 							"type": "decl",
 							"source": {
+								"inputId": 0,
 								"start": {
+									"offset": 133,
 									"line": 18,
 									"column": 3
 								},
-								"input": {
-									"file": "tpl-selector.mjs",
-									"quasis": [
-										{
-											"start": 96,
-											"end": 98
-										},
-										{
-											"start": 109,
-											"end": 137
-										},
-										{
-											"start": 148,
-											"end": 172
-										},
-										{
-											"start": 183,
-											"end": 213
-										},
-										{
-											"start": 224,
-											"end": 248
-										},
-										{
-											"start": 259,
-											"end": 291
-										},
-										{
-											"start": 302,
-											"end": 325
-										}
-									]
-								},
 								"end": {
+									"offset": 146,
 									"line": 18,
 									"column": 16
 								}
@@ -393,49 +192,21 @@
 						}
 					],
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 114,
 							"line": 16,
 							"column": 2
 						},
-						"input": {
-							"file": "tpl-selector.mjs",
-							"quasis": [
-								{
-									"start": 96,
-									"end": 98
-								},
-								{
-									"start": 109,
-									"end": 137
-								},
-								{
-									"start": 148,
-									"end": 172
-								},
-								{
-									"start": 183,
-									"end": 213
-								},
-								{
-									"start": 224,
-									"end": 248
-								},
-								{
-									"start": 259,
-									"end": 291
-								},
-								{
-									"start": 302,
-									"end": 325
-								}
-							]
-						},
 						"end": {
+							"offset": 149,
 							"line": 19,
 							"column": 2
 						}
 					},
-					"selector": "a\n\t${selector}"
+					"selector": "a\n\t${selector}",
+					"lastEach": 1,
+					"indexes": {}
 				},
 				{
 					"raws": {
@@ -453,44 +224,14 @@
 							},
 							"type": "decl",
 							"source": {
+								"inputId": 0,
 								"start": {
+									"offset": 172,
 									"line": 22,
 									"column": 3
 								},
-								"input": {
-									"file": "tpl-selector.mjs",
-									"quasis": [
-										{
-											"start": 96,
-											"end": 98
-										},
-										{
-											"start": 109,
-											"end": 137
-										},
-										{
-											"start": 148,
-											"end": 172
-										},
-										{
-											"start": 183,
-											"end": 213
-										},
-										{
-											"start": 224,
-											"end": 248
-										},
-										{
-											"start": 259,
-											"end": 291
-										},
-										{
-											"start": 302,
-											"end": 325
-										}
-									]
-								},
 								"end": {
+									"offset": 185,
 									"line": 22,
 									"column": 16
 								}
@@ -500,49 +241,21 @@
 						}
 					],
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 152,
 							"line": 20,
 							"column": 2
 						},
-						"input": {
-							"file": "tpl-selector.mjs",
-							"quasis": [
-								{
-									"start": 96,
-									"end": 98
-								},
-								{
-									"start": 109,
-									"end": 137
-								},
-								{
-									"start": 148,
-									"end": 172
-								},
-								{
-									"start": 183,
-									"end": 213
-								},
-								{
-									"start": 224,
-									"end": 248
-								},
-								{
-									"start": 259,
-									"end": 291
-								},
-								{
-									"start": 302,
-									"end": 325
-								}
-							]
-						},
 						"end": {
+							"offset": 188,
 							"line": 23,
 							"column": 2
 						}
 					},
-					"selector": "${selector},\n\ta"
+					"selector": "${selector},\n\ta",
+					"lastEach": 1,
+					"indexes": {}
 				},
 				{
 					"raws": {
@@ -560,44 +273,14 @@
 							},
 							"type": "decl",
 							"source": {
+								"inputId": 0,
 								"start": {
+									"offset": 211,
 									"line": 26,
 									"column": 3
 								},
-								"input": {
-									"file": "tpl-selector.mjs",
-									"quasis": [
-										{
-											"start": 96,
-											"end": 98
-										},
-										{
-											"start": 109,
-											"end": 137
-										},
-										{
-											"start": 148,
-											"end": 172
-										},
-										{
-											"start": 183,
-											"end": 213
-										},
-										{
-											"start": 224,
-											"end": 248
-										},
-										{
-											"start": 259,
-											"end": 291
-										},
-										{
-											"start": 302,
-											"end": 325
-										}
-									]
-								},
 								"end": {
+									"offset": 224,
 									"line": 26,
 									"column": 16
 								}
@@ -607,103 +290,52 @@
 						}
 					],
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 191,
 							"line": 24,
 							"column": 2
 						},
-						"input": {
-							"file": "tpl-selector.mjs",
-							"quasis": [
-								{
-									"start": 96,
-									"end": 98
-								},
-								{
-									"start": 109,
-									"end": 137
-								},
-								{
-									"start": 148,
-									"end": 172
-								},
-								{
-									"start": 183,
-									"end": 213
-								},
-								{
-									"start": 224,
-									"end": 248
-								},
-								{
-									"start": 259,
-									"end": 291
-								},
-								{
-									"start": 302,
-									"end": 325
-								}
-							]
-						},
 						"end": {
+							"offset": 227,
 							"line": 27,
 							"column": 2
 						}
 					},
-					"selector": "a,\n\t${selector}"
+					"selector": "a,\n\t${selector}",
+					"lastEach": 1,
+					"indexes": {}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "tpl-selector.mjs",
-					"quasis": [
-						{
-							"start": 96,
-							"end": 98
-						},
-						{
-							"start": 109,
-							"end": 137
-						},
-						{
-							"start": 148,
-							"end": 172
-						},
-						{
-							"start": 183,
-							"end": 213
-						},
-						{
-							"start": 224,
-							"end": 248
-						},
-						{
-							"start": 259,
-							"end": 291
-						},
-						{
-							"start": 302,
-							"end": 325
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 5,
 					"column": 31
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		}
 	],
 	"source": {
-		"input": {
-			"file": "tpl-selector.mjs"
-		},
+		"inputId": 0,
 		"start": {
 			"line": 1,
 			"column": 1
+		}
+	},
+	"inputs": [
+		{
+			"hasBOM": false,
+			"css": "\n\t${selector} a {\n\t\tdisplay: block\n\t}\n\ta ${selector} {\n\t\tdisplay: block\n\t}\n\t${selector}\n\ta {\n\t\tdisplay: block\n\t}\n\ta\n\t${selector} {\n\t\tdisplay: block\n\t}\n\t${selector},\n\ta {\n\t\tdisplay: block\n\t}\n\ta,\n\t${selector} {\n\t\tdisplay: block\n\t}\n",
+			"file": "tpl-selector.mjs"
 		},
-		"lang": "jsx"
-	}
+		{
+			"hasBOM": false,
+			"css": "import styled from \"styled-components\";\n\nconst selector = \"div\";\n\nexport const Row = styled.div`\n\t${selector} a {\n\t\tdisplay: block\n\t}\n\ta ${selector} {\n\t\tdisplay: block\n\t}\n\t${selector}\n\ta {\n\t\tdisplay: block\n\t}\n\ta\n\t${selector} {\n\t\tdisplay: block\n\t}\n\t${selector},\n\ta {\n\t\tdisplay: block\n\t}\n\ta,\n\t${selector} {\n\t\tdisplay: block\n\t}\n`;\n",
+			"file": "tpl-selector.mjs"
+		}
+	]
 }

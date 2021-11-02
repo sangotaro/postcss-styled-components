@@ -1,11 +1,14 @@
 {
-	"raws": {},
+	"raws": {
+		"afterEnd": "`;\n"
+	},
 	"type": "root",
 	"nodes": [
 		{
 			"raws": {
 				"semicolon": false,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "import styled from \"styled-components\";\n\nconst img = \"/images/logo.png\";\n\nexport const Row = styled.div`"
 			},
 			"type": "root",
 			"nodes": [
@@ -25,36 +28,14 @@
 							},
 							"type": "decl",
 							"source": {
+								"inputId": 0,
 								"start": {
+									"offset": 16,
 									"line": 7,
 									"column": 2
 								},
-								"input": {
-									"file": "tpl-special.mjs",
-									"quasis": [
-										{
-											"start": 104,
-											"end": 109
-										},
-										{
-											"start": 115,
-											"end": 142
-										},
-										{
-											"start": 148,
-											"end": 162
-										},
-										{
-											"start": 168,
-											"end": 197
-										},
-										{
-											"start": 203,
-											"end": 209
-										}
-									]
-								},
 								"end": {
+									"offset": 45,
 									"line": 7,
 									"column": 31
 								}
@@ -64,41 +45,21 @@
 						}
 					],
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 1,
 							"line": 6,
 							"column": 1
 						},
-						"input": {
-							"file": "tpl-special.mjs",
-							"quasis": [
-								{
-									"start": 104,
-									"end": 109
-								},
-								{
-									"start": 115,
-									"end": 142
-								},
-								{
-									"start": 148,
-									"end": 162
-								},
-								{
-									"start": 168,
-									"end": 197
-								},
-								{
-									"start": 203,
-									"end": 209
-								}
-							]
-						},
 						"end": {
+							"offset": 47,
 							"line": 8,
 							"column": 1
 						}
 					},
-					"selector": "img[${img}]"
+					"selector": "img[${img}]",
+					"lastEach": 1,
+					"indexes": {}
 				},
 				{
 					"raws": {
@@ -116,36 +77,14 @@
 							},
 							"type": "decl",
 							"source": {
+								"inputId": 0,
 								"start": {
+									"offset": 70,
 									"line": 10,
 									"column": 2
 								},
-								"input": {
-									"file": "tpl-special.mjs",
-									"quasis": [
-										{
-											"start": 104,
-											"end": 109
-										},
-										{
-											"start": 115,
-											"end": 142
-										},
-										{
-											"start": 148,
-											"end": 162
-										},
-										{
-											"start": 168,
-											"end": 197
-										},
-										{
-											"start": 203,
-											"end": 209
-										}
-									]
-								},
 								"end": {
+									"offset": 101,
 									"line": 10,
 									"column": 33
 								}
@@ -155,87 +94,52 @@
 						}
 					],
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 49,
 							"line": 9,
 							"column": 1
 						},
-						"input": {
-							"file": "tpl-special.mjs",
-							"quasis": [
-								{
-									"start": 104,
-									"end": 109
-								},
-								{
-									"start": 115,
-									"end": 142
-								},
-								{
-									"start": 148,
-									"end": 162
-								},
-								{
-									"start": 168,
-									"end": 197
-								},
-								{
-									"start": 203,
-									"end": 209
-								}
-							]
-						},
 						"end": {
+							"offset": 103,
 							"line": 11,
 							"column": 1
 						}
 					},
-					"selector": "img[att=\"${img}\"]"
+					"selector": "img[att=\"${img}\"]",
+					"lastEach": 1,
+					"indexes": {}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "tpl-special.mjs",
-					"quasis": [
-						{
-							"start": 104,
-							"end": 109
-						},
-						{
-							"start": 115,
-							"end": 142
-						},
-						{
-							"start": 148,
-							"end": 162
-						},
-						{
-							"start": 168,
-							"end": 197
-						},
-						{
-							"start": 203,
-							"end": 209
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 5,
 					"column": 31
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		}
 	],
 	"source": {
-		"input": {
-			"file": "tpl-special.mjs"
-		},
+		"inputId": 0,
 		"start": {
 			"line": 1,
 			"column": 1
+		}
+	},
+	"inputs": [
+		{
+			"hasBOM": false,
+			"css": "\nimg[${img}] {\n\tbackground-image: url(${img});\n}\nimg[att=\"${img}\"] {\n\tbackground-image: url(\"${img}\");\n}\n",
+			"file": "tpl-special.mjs"
 		},
-		"lang": "jsx"
-	}
+		{
+			"hasBOM": false,
+			"css": "import styled from \"styled-components\";\n\nconst img = \"/images/logo.png\";\n\nexport const Row = styled.div`\nimg[${img}] {\n\tbackground-image: url(${img});\n}\nimg[att=\"${img}\"] {\n\tbackground-image: url(\"${img}\");\n}\n`;\n",
+			"file": "tpl-special.mjs"
+		}
+	]
 }
