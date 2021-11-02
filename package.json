@@ -54,7 +54,7 @@
     "postcss-safe-parser": "6.0.0"
   },
   "devDependencies": {
-    "@stylelint/remark-preset": "2.0.0",
+    "@stylelint/remark-preset": "3.0.0",
     "autoprefixer": "9.8.6",
     "codecov": "3.8.3",
     "eslint": "7.32.0",
