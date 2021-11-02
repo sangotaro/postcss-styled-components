@@ -1,11 +1,14 @@
 {
-	"raws": {},
+	"raws": {
+		"afterEnd": "`;\n"
+	},
 	"type": "root",
 	"nodes": [
 		{
 			"raws": {
 				"semicolon": true,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "import styled from \"styled-components\";\n\nconst color = \"#ddd\";\n\nexport const Row = styled.div`"
 			},
 			"type": "root",
 			"nodes": [
@@ -16,24 +19,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 6,
 							"column": 2
 						},
-						"input": {
-							"file": "tpl-in-tpl.mjs",
-							"quasis": [
-								{
-									"start": 94,
-									"end": 111
-								},
-								{
-									"start": 168,
-									"end": 170
-								}
-							]
-						},
 						"end": {
+							"offset": 74,
 							"line": 6,
 							"column": 74
 						}
@@ -43,37 +36,34 @@
 				}
 			],
 			"source": {
-				"input": {
-					"file": "tpl-in-tpl.mjs",
-					"quasis": [
-						{
-							"start": 94,
-							"end": 111
-						},
-						{
-							"start": 168,
-							"end": 170
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 5,
 					"column": 31
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		}
 	],
 	"source": {
-		"input": {
-			"file": "tpl-in-tpl.mjs"
-		},
+		"inputId": 0,
 		"start": {
 			"line": 1,
 			"column": 1
+		}
+	},
+	"inputs": [
+		{
+			"hasBOM": false,
+			"css": "\n\tborder-bottom: ${(props) => (props.border ? `1px solid ${color}` : \"0\")};\n",
+			"file": "tpl-in-tpl.mjs"
 		},
-		"lang": "jsx"
-	}
+		{
+			"hasBOM": false,
+			"css": "import styled from \"styled-components\";\n\nconst color = \"#ddd\";\n\nexport const Row = styled.div`\n\tborder-bottom: ${(props) => (props.border ? `1px solid ${color}` : \"0\")};\n`;\n",
+			"file": "tpl-in-tpl.mjs"
+		}
+	]
 }

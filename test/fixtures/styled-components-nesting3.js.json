@@ -1,11 +1,14 @@
 {
-	"raws": {},
+	"raws": {
+		"afterEnd": "`;\n"
+	},
 	"type": "root",
 	"nodes": [
 		{
 			"raws": {
 				"semicolon": false,
-				"after": ""
+				"after": "",
+				"beforeStart": "import styled, { css } from 'styled-components';\nconst Message1 = styled.p`"
 			},
 			"type": "root",
 			"nodes": [
@@ -16,24 +19,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 0,
 							"line": 2,
 							"column": 27
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 75,
-									"end": 89
-								},
-								{
-									"start": 112,
-									"end": 112
-								}
-							]
-						},
 						"end": {
+							"offset": 13,
 							"line": 2,
 							"column": 40
 						}
@@ -48,29 +41,20 @@
 					"text": "${css`color: #b02d00;`}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 14,
 							"line": 2,
 							"column": 41
-						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 75,
-									"end": 89
-								},
-								{
-									"start": 112,
-									"end": 112
-								}
-							]
 						}
 					},
 					"nodes": [
 						{
 							"raws": {
 								"semicolon": true,
-								"after": ""
+								"after": "",
+								"beforeStart": "${css`",
+								"afterEnd": "`}"
 							},
 							"type": "root",
 							"nodes": [
@@ -81,14 +65,14 @@
 									},
 									"type": "decl",
 									"source": {
+										"inputId": 0,
 										"start": {
+											"offset": 0,
 											"line": 2,
 											"column": 47
 										},
-										"input": {
-											"file": "styled-components-nesting3.js"
-										},
 										"end": {
+											"offset": 14,
 											"line": 2,
 											"column": 61
 										}
@@ -98,47 +82,37 @@
 								}
 							],
 							"source": {
-								"input": {
-									"file": "styled-components-nesting3.js"
-								},
+								"inputId": 0,
 								"start": {
+									"offset": 0,
 									"line": 2,
 									"column": 47
-								},
-								"inline": false,
-								"lang": "css"
-							}
+								}
+							},
+							"lastEach": 2,
+							"indexes": {}
 						}
-					]
+					],
+					"lastEach": 1,
+					"indexes": {}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "styled-components-nesting3.js",
-					"quasis": [
-						{
-							"start": 75,
-							"end": 89
-						},
-						{
-							"start": 112,
-							"end": 112
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 2,
 					"column": 27
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		},
 		{
 			"raws": {
 				"semicolon": false,
-				"after": ""
+				"after": "",
+				"beforeStart": "`;\nconst Message2 = styled.p`"
 			},
 			"type": "root",
 			"nodes": [
@@ -149,24 +123,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 4,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 141,
-									"end": 162
-								},
-								{
-									"start": 185,
-									"end": 185
-								}
-							]
-						},
 						"end": {
+							"offset": 15,
 							"line": 4,
 							"column": 15
 						}
@@ -181,29 +145,20 @@
 					"text": "${css`color: #b02d00;`}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 21,
 							"line": 8,
 							"column": 2
-						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 141,
-									"end": 162
-								},
-								{
-									"start": 185,
-									"end": 185
-								}
-							]
 						}
 					},
 					"nodes": [
 						{
 							"raws": {
 								"semicolon": true,
-								"after": ""
+								"after": "",
+								"beforeStart": "${css`",
+								"afterEnd": "`}"
 							},
 							"type": "root",
 							"nodes": [
@@ -214,14 +169,14 @@
 									},
 									"type": "decl",
 									"source": {
+										"inputId": 0,
 										"start": {
+											"offset": 0,
 											"line": 8,
 											"column": 8
 										},
-										"input": {
-											"file": "styled-components-nesting3.js"
-										},
 										"end": {
+											"offset": 14,
 											"line": 8,
 											"column": 22
 										}
@@ -231,47 +186,37 @@
 								}
 							],
 							"source": {
-								"input": {
-									"file": "styled-components-nesting3.js"
-								},
+								"inputId": 0,
 								"start": {
+									"offset": 0,
 									"line": 8,
 									"column": 8
-								},
-								"inline": false,
-								"lang": "css"
-							}
+								}
+							},
+							"lastEach": 2,
+							"indexes": {}
 						}
-					]
+					],
+					"lastEach": 1,
+					"indexes": {}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "styled-components-nesting3.js",
-					"quasis": [
-						{
-							"start": 141,
-							"end": 162
-						},
-						{
-							"start": 185,
-							"end": 185
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 3,
 					"column": 27
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		},
 		{
 			"raws": {
 				"semicolon": false,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "`;\n\nconst Button = styled.a`"
 			},
 			"type": "root",
 			"nodes": [
@@ -283,24 +228,14 @@
 					},
 					"type": "comment",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 11,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 213,
-									"end": 521
-								},
-								{
-									"start": 602,
-									"end": 603
-								}
-							]
-						},
 						"end": {
+							"offset": 49,
 							"line": 11,
 							"column": 49
 						}
@@ -314,24 +249,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 52,
 							"line": 12,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 213,
-									"end": 521
-								},
-								{
-									"start": 602,
-									"end": 603
-								}
-							]
-						},
 						"end": {
+							"offset": 73,
 							"line": 12,
 							"column": 23
 						}
@@ -346,24 +271,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 76,
 							"line": 13,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 213,
-									"end": 521
-								},
-								{
-									"start": 602,
-									"end": 603
-								}
-							]
-						},
 						"end": {
+							"offset": 94,
 							"line": 13,
 							"column": 20
 						}
@@ -378,24 +293,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 97,
 							"line": 14,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 213,
-									"end": 521
-								},
-								{
-									"start": 602,
-									"end": 603
-								}
-							]
-						},
 						"end": {
+							"offset": 114,
 							"line": 14,
 							"column": 19
 						}
@@ -410,24 +315,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 117,
 							"line": 15,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 213,
-									"end": 521
-								},
-								{
-									"start": 602,
-									"end": 603
-								}
-							]
-						},
 						"end": {
+							"offset": 136,
 							"line": 15,
 							"column": 21
 						}
@@ -442,24 +337,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 139,
 							"line": 16,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 213,
-									"end": 521
-								},
-								{
-									"start": 602,
-									"end": 603
-								}
-							]
-						},
 						"end": {
+							"offset": 151,
 							"line": 16,
 							"column": 14
 						}
@@ -474,24 +359,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 154,
 							"line": 17,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 213,
-									"end": 521
-								},
-								{
-									"start": 602,
-									"end": 603
-								}
-							]
-						},
 						"end": {
+							"offset": 177,
 							"line": 17,
 							"column": 25
 						}
@@ -506,24 +381,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 180,
 							"line": 18,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 213,
-									"end": 521
-								},
-								{
-									"start": 602,
-									"end": 603
-								}
-							]
-						},
 						"end": {
+							"offset": 192,
 							"line": 18,
 							"column": 14
 						}
@@ -538,24 +403,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 195,
 							"line": 19,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 213,
-									"end": 521
-								},
-								{
-									"start": 602,
-									"end": 603
-								}
-							]
-						},
 						"end": {
+							"offset": 218,
 							"line": 19,
 							"column": 25
 						}
@@ -571,24 +426,14 @@
 					},
 					"type": "comment",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 222,
 							"line": 21,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 213,
-									"end": 521
-								},
-								{
-									"start": 602,
-									"end": 603
-								}
-							]
-						},
 						"end": {
+							"offset": 305,
 							"line": 22,
 							"column": 43
 						}
@@ -602,29 +447,20 @@
 					"text": "${props => props.primary && css`\n\t\tbackground: white;\n\t\tcolor: palevioletred;\n\t`}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 308,
 							"line": 23,
 							"column": 2
-						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 213,
-									"end": 521
-								},
-								{
-									"start": 602,
-									"end": 603
-								}
-							]
 						}
 					},
 					"nodes": [
 						{
 							"raws": {
 								"semicolon": true,
-								"after": "\n\t"
+								"after": "\n\t",
+								"beforeStart": "${props => props.primary && css`",
+								"afterEnd": "`}"
 							},
 							"type": "root",
 							"nodes": [
@@ -635,14 +471,14 @@
 									},
 									"type": "decl",
 									"source": {
+										"inputId": 0,
 										"start": {
+											"offset": 3,
 											"line": 24,
 											"column": 3
 										},
-										"input": {
-											"file": "styled-components-nesting3.js"
-										},
 										"end": {
+											"offset": 20,
 											"line": 24,
 											"column": 20
 										}
@@ -657,14 +493,14 @@
 									},
 									"type": "decl",
 									"source": {
+										"inputId": 0,
 										"start": {
+											"offset": 24,
 											"line": 25,
 											"column": 3
 										},
-										"input": {
-											"file": "styled-components-nesting3.js"
-										},
 										"end": {
+											"offset": 44,
 											"line": 25,
 											"column": 23
 										}
@@ -674,47 +510,37 @@
 								}
 							],
 							"source": {
-								"input": {
-									"file": "styled-components-nesting3.js"
-								},
+								"inputId": 0,
 								"start": {
+									"offset": 0,
 									"line": 23,
 									"column": 34
-								},
-								"inline": false,
-								"lang": "css"
-							}
+								}
+							},
+							"lastEach": 2,
+							"indexes": {}
 						}
-					]
+					],
+					"lastEach": 1,
+					"indexes": {}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "styled-components-nesting3.js",
-					"quasis": [
-						{
-							"start": 213,
-							"end": 521
-						},
-						{
-							"start": 602,
-							"end": 603
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 10,
 					"column": 25
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		},
 		{
 			"raws": {
 				"semicolon": false,
-				"after": ""
+				"after": "",
+				"beforeStart": "`\nconst Message3 = styled.p`"
 			},
 			"type": "root",
 			"nodes": [
@@ -725,24 +551,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 29,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 631,
-									"end": 649
-								},
-								{
-									"start": 708,
-									"end": 708
-								}
-							]
-						},
 						"end": {
+							"offset": 15,
 							"line": 29,
 							"column": 15
 						}
@@ -757,29 +573,20 @@
 					"text": "${props => props.a ? css`color: red;` : css`color: blue;` }",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 18,
 							"line": 30,
 							"column": 2
-						},
-						"input": {
-							"file": "styled-components-nesting3.js",
-							"quasis": [
-								{
-									"start": 631,
-									"end": 649
-								},
-								{
-									"start": 708,
-									"end": 708
-								}
-							]
 						}
 					},
 					"nodes": [
 						{
 							"raws": {
 								"semicolon": true,
-								"after": ""
+								"after": "",
+								"beforeStart": "${props => props.a ? css`",
+								"afterEnd": ""
 							},
 							"type": "root",
 							"nodes": [
@@ -790,14 +597,14 @@
 									},
 									"type": "decl",
 									"source": {
+										"inputId": 0,
 										"start": {
+											"offset": 0,
 											"line": 30,
 											"column": 27
 										},
-										"input": {
-											"file": "styled-components-nesting3.js"
-										},
 										"end": {
+											"offset": 10,
 											"line": 30,
 											"column": 37
 										}
@@ -807,21 +614,22 @@
 								}
 							],
 							"source": {
-								"input": {
-									"file": "styled-components-nesting3.js"
-								},
+								"inputId": 0,
 								"start": {
+									"offset": 0,
 									"line": 30,
 									"column": 27
-								},
-								"inline": false,
-								"lang": "css"
-							}
+								}
+							},
+							"lastEach": 2,
+							"indexes": {}
 						},
 						{
 							"raws": {
 								"semicolon": true,
-								"after": ""
+								"after": "",
+								"beforeStart": "` : css`",
+								"afterEnd": "` }"
 							},
 							"type": "root",
 							"nodes": [
@@ -832,14 +640,14 @@
 									},
 									"type": "decl",
 									"source": {
+										"inputId": 0,
 										"start": {
+											"offset": 0,
 											"line": 30,
 											"column": 46
 										},
-										"input": {
-											"file": "styled-components-nesting3.js"
-										},
 										"end": {
+											"offset": 11,
 											"line": 30,
 											"column": 57
 										}
@@ -849,52 +657,90 @@
 								}
 							],
 							"source": {
-								"input": {
-									"file": "styled-components-nesting3.js"
-								},
+								"inputId": 0,
 								"start": {
+									"offset": 0,
 									"line": 30,
 									"column": 46
-								},
-								"inline": false,
-								"lang": "css"
-							}
+								}
+							},
+							"lastEach": 2,
+							"indexes": {}
 						}
-					]
+					],
+					"lastEach": 1,
+					"indexes": {}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "styled-components-nesting3.js",
-					"quasis": [
-						{
-							"start": 631,
-							"end": 649
-						},
-						{
-							"start": 708,
-							"end": 708
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 28,
 					"column": 27
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		}
 	],
 	"source": {
-		"input": {
-			"file": "styled-components-nesting3.js"
-		},
+		"inputId": 0,
 		"start": {
 			"line": 1,
 			"column": 1
+		}
+	},
+	"inputs": [
+		{
+			"hasBOM": false,
+			"css": "padding: 10px;${css`color: #b02d00;`}",
+			"file": "styled-components-nesting3.js"
 		},
-		"lang": "jsx"
-	}
+		{
+			"hasBOM": false,
+			"css": "color: #b02d00;",
+			"file": "styled-components-nesting3.js"
+		},
+		{
+			"hasBOM": false,
+			"css": "\n\tpadding: 10px;\n\n\n\n\t${css`color: #b02d00;`}",
+			"file": "styled-components-nesting3.js"
+		},
+		{
+			"hasBOM": false,
+			"css": "color: #b02d00;",
+			"file": "styled-components-nesting3.js"
+		},
+		{
+			"hasBOM": false,
+			"css": "\n\t/* This renders the buttons above... Edit me! */\n\tdisplay: inline-block;\n\tborder-radius: 3px;\n\tpadding: 0.5rem 0;\n\tmargin: 0.5rem 1rem;\n\twidth: 11rem;\n\tbackground: transparent;\n\tcolor: white;\n\tborder: 2px solid white;\n\n\t/* The GitHub button is a primary button\n\t * edit this to target it specifically! */\n\t${props => props.primary && css`\n\t\tbackground: white;\n\t\tcolor: palevioletred;\n\t`}\n",
+			"file": "styled-components-nesting3.js"
+		},
+		{
+			"hasBOM": false,
+			"css": "\n\t\tbackground: white;\n\t\tcolor: palevioletred;\n\t",
+			"file": "styled-components-nesting3.js"
+		},
+		{
+			"hasBOM": false,
+			"css": "\n\tpadding: 10px;\n\t${props => props.a ? css`color: red;` : css`color: blue;` }",
+			"file": "styled-components-nesting3.js"
+		},
+		{
+			"hasBOM": false,
+			"css": "color: red;",
+			"file": "styled-components-nesting3.js"
+		},
+		{
+			"hasBOM": false,
+			"css": "color: blue;",
+			"file": "styled-components-nesting3.js"
+		},
+		{
+			"hasBOM": false,
+			"css": "import styled, { css } from 'styled-components';\nconst Message1 = styled.p`padding: 10px;${css`color: #b02d00;`}`;\nconst Message2 = styled.p`\n\tpadding: 10px;\n\n\n\n\t${css`color: #b02d00;`}`;\n\nconst Button = styled.a`\n\t/* This renders the buttons above... Edit me! */\n\tdisplay: inline-block;\n\tborder-radius: 3px;\n\tpadding: 0.5rem 0;\n\tmargin: 0.5rem 1rem;\n\twidth: 11rem;\n\tbackground: transparent;\n\tcolor: white;\n\tborder: 2px solid white;\n\n\t/* The GitHub button is a primary button\n\t * edit this to target it specifically! */\n\t${props => props.primary && css`\n\t\tbackground: white;\n\t\tcolor: palevioletred;\n\t`}\n`\nconst Message3 = styled.p`\n\tpadding: 10px;\n\t${props => props.a ? css`color: red;` : css`color: blue;` }`;\n",
+			"file": "styled-components-nesting3.js"
+		}
+	]
 }

@@ -1,11 +1,14 @@
 {
-	"raws": {},
+	"raws": {
+		"afterEnd": "`;\n\nexport default Component;\n"
+	},
 	"type": "root",
 	"nodes": [
 		{
 			"raws": {
 				"semicolon": true,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "import styled from \"styled-components\";\n\nconst Component = styled.div.attrs({\n\tclassName: \"someClassName\",\n})`"
 			},
 			"type": "root",
 			"nodes": [
@@ -16,14 +19,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 6,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-props.jsx"
-						},
 						"end": {
+							"offset": 12,
 							"line": 6,
 							"column": 12
 						}
@@ -33,27 +36,34 @@
 				}
 			],
 			"source": {
-				"input": {
-					"file": "styled-props.jsx"
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 5,
 					"column": 4
-				},
-				"inline": false,
-				"lang": "css",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		}
 	],
 	"source": {
-		"input": {
-			"file": "styled-props.jsx"
-		},
+		"inputId": 0,
 		"start": {
 			"line": 1,
 			"column": 1
+		}
+	},
+	"inputs": [
+		{
+			"hasBOM": false,
+			"css": "\n\tcolor: red;\n",
+			"file": "styled-props.jsx"
 		},
-		"lang": "jsx"
-	}
+		{
+			"hasBOM": false,
+			"css": "import styled from \"styled-components\";\n\nconst Component = styled.div.attrs({\n\tclassName: \"someClassName\",\n})`\n\tcolor: red;\n`;\n\nexport default Component;\n",
+			"file": "styled-props.jsx"
+		}
+	]
 }

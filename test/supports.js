@@ -5,24 +5,10 @@ const path = require('path');
 const syntax = require('../lib');
 
 function clean(node) {
-	if (node.raws) {
-		delete node.raws.node;
-		delete node.raws.beforeStart;
-		delete node.raws.afterEnd;
-	}
-
 	if (node.source) {
-		delete node.source.opts;
-		delete node.source.input.css;
-		delete node.source.input.hasBOM;
-		delete node.source.input.parseOptions;
-		delete node.source.input.templateLiteralStyles;
 		node.source.input.file = path.basename(node.source.input.file);
 	}
 
-	delete node.indexes;
-	delete node.lastEach;
-	delete node.rawCache;
 	delete node.document;
 
 	if (node.nodes) {
@@ -58,9 +44,10 @@ describe('should support for each CSS in JS package', () => {
 			expect(document.source).toHaveProperty('lang', 'jsx');
 			expect(document.toString()).toBe(code.toString());
 			expect(document.nodes.length).toBeGreaterThan(0);
-			const parsed = JSON.stringify(clean(document), 0, '\t');
+			clean(document);
+			const parsed = JSON.stringify(document.toJSON(), 0, '\t');
 
-			// fs.writeFileSync(file + ".json", parsed + "\n");
+			// fs.writeFileSync(file + '.json', parsed + '\n');
 			expect(parsed).toBe(fs.readFileSync(`${file}.json`, 'utf8').trim());
 		});
 	});

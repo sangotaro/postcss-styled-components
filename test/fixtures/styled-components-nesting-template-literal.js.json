@@ -1,11 +1,14 @@
 {
-	"raws": {},
+	"raws": {
+		"afterEnd": "`;\n"
+	},
 	"type": "root",
 	"nodes": [
 		{
 			"raws": {
 				"semicolon": false,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "import styled, { css } from 'styled-components';\nconst Message = styled.p`"
 			},
 			"type": "root",
 			"nodes": [
@@ -16,28 +19,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 3,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting-template-literal.js",
-							"quasis": [
-								{
-									"start": 74,
-									"end": 92
-								},
-								{
-									"start": 128,
-									"end": 130
-								},
-								{
-									"start": 170,
-									"end": 171
-								}
-							]
-						},
 						"end": {
+							"offset": 15,
 							"line": 3,
 							"column": 15
 						}
@@ -52,26 +41,11 @@
 					"text": "${(props) => `\n\t\tcolor: #b02d00;\n\t`}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 18,
 							"line": 4,
 							"column": 2
-						},
-						"input": {
-							"file": "styled-components-nesting-template-literal.js",
-							"quasis": [
-								{
-									"start": 74,
-									"end": 92
-								},
-								{
-									"start": 128,
-									"end": 130
-								},
-								{
-									"start": 170,
-									"end": 171
-								}
-							]
 						}
 					}
 				},
@@ -82,66 +56,44 @@
 					"text": "${(props2) => `\n\t\tborder-color: red;\n\t`}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 56,
 							"line": 7,
 							"column": 2
-						},
-						"input": {
-							"file": "styled-components-nesting-template-literal.js",
-							"quasis": [
-								{
-									"start": 74,
-									"end": 92
-								},
-								{
-									"start": 128,
-									"end": 130
-								},
-								{
-									"start": 170,
-									"end": 171
-								}
-							]
 						}
 					}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "styled-components-nesting-template-literal.js",
-					"quasis": [
-						{
-							"start": 74,
-							"end": 92
-						},
-						{
-							"start": 128,
-							"end": 130
-						},
-						{
-							"start": 170,
-							"end": 171
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 2,
 					"column": 26
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		}
 	],
 	"source": {
-		"input": {
-			"file": "styled-components-nesting-template-literal.js"
-		},
+		"inputId": 0,
 		"start": {
 			"line": 1,
 			"column": 1
+		}
+	},
+	"inputs": [
+		{
+			"hasBOM": false,
+			"css": "\n\tpadding: 10px;\n\t${(props) => `\n\t\tcolor: #b02d00;\n\t`}\n\t${(props2) => `\n\t\tborder-color: red;\n\t`}\n",
+			"file": "styled-components-nesting-template-literal.js"
 		},
-		"lang": "jsx"
-	}
+		{
+			"hasBOM": false,
+			"css": "import styled, { css } from 'styled-components';\nconst Message = styled.p`\n\tpadding: 10px;\n\t${(props) => `\n\t\tcolor: #b02d00;\n\t`}\n\t${(props2) => `\n\t\tborder-color: red;\n\t`}\n`;\n",
+			"file": "styled-components-nesting-template-literal.js"
+		}
+	]
 }

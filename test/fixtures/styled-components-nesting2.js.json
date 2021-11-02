@@ -1,11 +1,14 @@
 {
-	"raws": {},
+	"raws": {
+		"afterEnd": "`;\n"
+	},
 	"type": "root",
 	"nodes": [
 		{
 			"raws": {
 				"semicolon": false,
-				"after": "\n"
+				"after": "\n",
+				"beforeStart": "import styled, { css } from 'styled-components';\nconst Message = styled.p`"
 			},
 			"type": "root",
 			"nodes": [
@@ -16,24 +19,14 @@
 					},
 					"type": "decl",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 2,
 							"line": 3,
 							"column": 2
 						},
-						"input": {
-							"file": "styled-components-nesting2.js",
-							"quasis": [
-								{
-									"start": 74,
-									"end": 92
-								},
-								{
-									"start": 120,
-									"end": 121
-								}
-							]
-						},
 						"end": {
+							"offset": 15,
 							"line": 3,
 							"column": 15
 						}
@@ -48,29 +41,20 @@
 					"text": "${css`\n\t\tcolor: #b02d00;\n\t`}",
 					"type": "literal",
 					"source": {
+						"inputId": 0,
 						"start": {
+							"offset": 18,
 							"line": 4,
 							"column": 2
-						},
-						"input": {
-							"file": "styled-components-nesting2.js",
-							"quasis": [
-								{
-									"start": 74,
-									"end": 92
-								},
-								{
-									"start": 120,
-									"end": 121
-								}
-							]
 						}
 					},
 					"nodes": [
 						{
 							"raws": {
 								"semicolon": true,
-								"after": "\n\t"
+								"after": "\n\t",
+								"beforeStart": "${css`",
+								"afterEnd": "`}"
 							},
 							"type": "root",
 							"nodes": [
@@ -81,14 +65,14 @@
 									},
 									"type": "decl",
 									"source": {
+										"inputId": 0,
 										"start": {
+											"offset": 3,
 											"line": 5,
 											"column": 3
 										},
-										"input": {
-											"file": "styled-components-nesting2.js"
-										},
 										"end": {
+											"offset": 17,
 											"line": 5,
 											"column": 17
 										}
@@ -98,52 +82,55 @@
 								}
 							],
 							"source": {
-								"input": {
-									"file": "styled-components-nesting2.js"
-								},
+								"inputId": 0,
 								"start": {
+									"offset": 0,
 									"line": 4,
 									"column": 8
-								},
-								"inline": false,
-								"lang": "css"
-							}
+								}
+							},
+							"lastEach": 2,
+							"indexes": {}
 						}
-					]
+					],
+					"lastEach": 1,
+					"indexes": {}
 				}
 			],
 			"source": {
-				"input": {
-					"file": "styled-components-nesting2.js",
-					"quasis": [
-						{
-							"start": 74,
-							"end": 92
-						},
-						{
-							"start": 120,
-							"end": 121
-						}
-					]
-				},
+				"inputId": 0,
 				"start": {
+					"offset": 0,
 					"line": 2,
 					"column": 26
-				},
-				"inline": false,
-				"lang": "template-literal",
-				"syntax": {}
-			}
+				}
+			},
+			"lastEach": 1,
+			"indexes": {}
 		}
 	],
 	"source": {
-		"input": {
-			"file": "styled-components-nesting2.js"
-		},
+		"inputId": 0,
 		"start": {
 			"line": 1,
 			"column": 1
+		}
+	},
+	"inputs": [
+		{
+			"hasBOM": false,
+			"css": "\n\tpadding: 10px;\n\t${css`\n\t\tcolor: #b02d00;\n\t`}\n",
+			"file": "styled-components-nesting2.js"
 		},
-		"lang": "jsx"
-	}
+		{
+			"hasBOM": false,
+			"css": "\n\t\tcolor: #b02d00;\n\t",
+			"file": "styled-components-nesting2.js"
+		},
+		{
+			"hasBOM": false,
+			"css": "import styled, { css } from 'styled-components';\nconst Message = styled.p`\n\tpadding: 10px;\n\t${css`\n\t\tcolor: #b02d00;\n\t`}\n`;\n",
+			"file": "styled-components-nesting2.js"
+		}
+	]
 }
