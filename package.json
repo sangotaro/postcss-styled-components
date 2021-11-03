@@ -26,11 +26,6 @@
     "test": "jest",
     "watch": "jest --watch"
   },
-  "eslintConfig": {
-    "extends": [
-      "stylelint"
-    ]
-  },
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
@@ -53,7 +48,10 @@
     "codecov": "3.8.3",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
-    "eslint-config-stylelint": "13.1.1",
+    "eslint-plugin-eslint-comments": "3.2.0",
+    "eslint-plugin-jest": "25.2.2",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-sort-requires": "2.1.0",
     "jest": "27.3.1",
     "json5": "2.2.0",
     "np": "7.5.0",
