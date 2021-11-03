@@ -31,11 +31,6 @@
       "stylelint"
     ]
   },
-  "remarkConfig": {
-    "plugins": [
-      "@stylelint/remark-preset"
-    ]
-  },
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
@@ -66,7 +61,15 @@
     "prettier": "2.4.1",
     "remark-cli": "10.0.0"
   },
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+  },
   "publishConfig": {
     "access": "public"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "@stylelint/remark-preset"
+    ]
   }
 }
