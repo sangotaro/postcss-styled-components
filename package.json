@@ -51,7 +51,6 @@
     "eslint-plugin-eslint-comments": "3.2.0",
     "eslint-plugin-jest": "25.2.2",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-sort-requires": "2.1.0",
     "jest": "27.3.1",
     "json5": "2.2.0",
     "np": "7.5.0",

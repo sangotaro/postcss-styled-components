@@ -9,7 +9,6 @@ module.exports = {
     es6: true,
     node: true,
   },
-  plugins: ["eslint-comments", "jest", "node", "sort-requires"],
   extends: [
     "eslint:recommended",
     "plugin:eslint-comments/recommended",
@@ -112,7 +111,7 @@ module.exports = {
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
-    "sort-requires/sort-requires": "error",
+    "sort-imports": ["error", { allowSeparatedGroups: true }],
     strict: ["error", "global"],
   },
 };
