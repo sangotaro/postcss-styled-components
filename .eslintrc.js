@@ -9,13 +9,13 @@ module.exports = {
     es6: true,
     node: true,
   },
-  plugins: ["eslint-comments", "jest", "node", "sort-requires"],
   extends: [
     "eslint:recommended",
     "plugin:eslint-comments/recommended",
     "plugin:node/recommended",
     "plugin:jest/recommended",
     "plugin:jest/style",
+    "plugin:regexp/recommended",
     "prettier",
   ],
   rules: {
@@ -112,7 +112,11 @@ module.exports = {
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
-    "sort-requires/sort-requires": "error",
+    "sort-imports": ["error", { allowSeparatedGroups: true }],
+
+    // Prefer code readability, e.g. `[0-9A-Za-z]`.
+    "regexp/prefer-d": "off",
+
     strict: ["error", "global"],
   },
 };
