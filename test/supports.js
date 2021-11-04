@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const syntax = require("../lib");
+const syntax = require("../dist");
 
 function clean(node) {
   if (node.source) {

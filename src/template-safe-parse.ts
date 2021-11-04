@@ -1,6 +1,8 @@
 "use strict";
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'Input'.
 const Input = require("postcss/lib/input");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'TemplateSa... Remove this comment to see the full error message
 const TemplateSafeParser = require("./template-safe-parser");
 
 function templateSafeParse(css, opts) {

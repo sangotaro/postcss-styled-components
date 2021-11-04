@@ -1,10 +1,15 @@
 "use strict";
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'getLang'.
 const getLang = require("./get-lang");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'normalOpts... Remove this comment to see the full error message
 const normalOpts = require("./normal-opts");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'parser'.
 const parser = require("./parser");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'processor'... Remove this comment to see the full error message
 const processor = require("./processor");
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'getSyntax'... Remove this comment to see the full error message
 function getSyntax(opts, source) {
   const rules = opts.syntax && opts.syntax.config && opts.syntax.config.rules;
   const file = opts.from || "";
@@ -21,6 +26,7 @@ function getSyntax(opts, source) {
   );
 }
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'parse'.
 function parse(source, opts) {
   source = source.toString();
   opts = normalOpts(opts, this);

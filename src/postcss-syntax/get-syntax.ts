@@ -1,5 +1,6 @@
 "use strict";
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'path'.
 const path = require("path");
 const reSyntaxCSS = /^(?:post)?css$/i;
 
@@ -36,6 +37,7 @@ function requireSyntax(syntax) {
   return normalize(require(syntax));
 }
 
+// @ts-expect-error ts-migrate(2393) FIXME: Duplicate function implementation.
 function getSyntax(lang, opts) {
   let syntax;
 

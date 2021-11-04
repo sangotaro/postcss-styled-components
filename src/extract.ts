@@ -1,7 +1,10 @@
 "use strict";
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'getTemplat... Remove this comment to see the full error message
 const getTemplate = require("./get-template");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'loadSyntax... Remove this comment to see the full error message
 const loadSyntax = require("./postcss-syntax/load-syntax");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'parse'.
 const { parse, types, traverse, loadOptions } = require("@babel/core");
 
 const supports = {
@@ -241,6 +244,7 @@ function literalParser(source, opts, styles) {
   const tplLiteralStyles = [];
 
   Array.from(tplLiteral).forEach((node) => {
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'quasis' does not exist on type 'unknown'... Remove this comment to see the full error message
     const quasis = node.quasis.map((quasiNode) => ({
       start: quasiNode.start,
       end: quasiNode.end,
@@ -251,19 +255,25 @@ function literalParser(source, opts, styles) {
       content: getTemplate(node, source),
     };
 
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'expressions' does not exist on type 'unk... Remove this comment to see the full error message
     if (node.expressions.length) {
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'expressions' does not exist on type 'unk... Remove this comment to see the full error message
       const expressions = node.expressions.map((expressionNode) => ({
         start: expressionNode.start,
         end: expressionNode.end,
       }));
 
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'syntax' does not exist on type '{ startI... Remove this comment to see the full error message
       style.syntax = loadSyntax(opts, __dirname);
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'lang' does not exist on type '{ startInd... Remove this comment to see the full error message
       style.lang = "template-literal";
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'opts' does not exist on type '{ startInd... Remove this comment to see the full error message
       style.opts = {
         quasis,
         expressions,
       };
     } else {
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'lang' does not exist on type '{ startInd... Remove this comment to see the full error message
       style.lang = "css";
     }
 

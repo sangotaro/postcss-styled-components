@@ -1,7 +1,9 @@
 "use strict";
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'Literal'.
 const Literal = require("./literal");
 const postcssParse = require("postcss/lib/parse");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'reNewLine'... Remove this comment to see the full error message
 // eslint-disable-next-line regexp/no-useless-non-capturing-group, regexp/no-useless-flag
 const reNewLine = /(?:\r?\n|\r)/gm;
 const isLiteral = (token) =>
@@ -132,6 +134,7 @@ function parseTemplateLiteralStyles(styles, input, range) {
   return nodes;
 }
 
+// @ts-expect-error ts-migrate(2300) FIXME: Duplicate identifier 'LocalFixer'.
 class LocalFixer {
   constructor(offset, lines, style, templateParse) {
     const startIndex = style.startIndex - offset;
@@ -152,17 +155,23 @@ class LocalFixer {
       return false;
     });
 
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'line' does not exist on type 'LocalFixer... Remove this comment to see the full error message
     this.line = line;
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'column' does not exist on type 'LocalFix... Remove this comment to see the full error message
     this.column = column;
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'style' does not exist on type 'LocalFixe... Remove this comment to see the full error message
     this.style = style;
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'templateParse' does not exist on type 'L... Remove this comment to see the full error message
     this.templateParse = templateParse;
   }
   object(object) {
     if (object) {
       if (object.line === 1) {
+        // @ts-expect-error ts-migrate(2339) FIXME: Property 'column' does not exist on type 'LocalFix... Remove this comment to see the full error message
         object.column += this.column;
       }
 
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'line' does not exist on type 'LocalFixer... Remove this comment to see the full error message
       object.line += this.line;
     }
   }
@@ -189,11 +198,13 @@ class LocalFixer {
     return error;
   }
   parse(opts) {
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'style' does not exist on type 'LocalFixe... Remove this comment to see the full error message
     const style = this.style;
     const syntax = style.syntax;
     let root = style.root;
 
     try {
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'templateParse' does not exist on type 'L... Remove this comment to see the full error message
       root = this.templateParse(style.content, {
         ...opts,
         map: false,
@@ -223,6 +234,7 @@ class LocalFixer {
   }
 }
 
+// @ts-expect-error ts-migrate(2393) FIXME: Duplicate function implementation.
 function docFixer(offset, source, opts) {
   let match;
   const lines = [];

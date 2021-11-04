@@ -12,15 +12,16 @@
   "repository": "sangotaro/postcss-styled-components",
   "license": "MIT",
   "author": "sangotaro",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
+    "build": "tsc",
     "fmt": "prettier . --write",
     "lint": "npm-run-all --parallel lint:*",
     "lint:fmt": "prettier . --check",
-    "lint:js": "eslint . --cache --max-warnings=0",
+    "lint:js": "eslint . --cache --max-warnings=53",
     "lint:md": "remark . --quiet --frail",
     "release": "np",
     "test": "jest",
@@ -29,7 +30,7 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.js",
+      "src/**/*.ts",
       "!coverage/**",
       "!test{,s}/**",
       "!**/.{prettier,eslint}rc.{js,cjs}"
@@ -45,6 +46,8 @@
   },
   "devDependencies": {
     "@stylelint/remark-preset": "3.0.0",
+    "@typescript-eslint/eslint-plugin": "5.3.0",
+    "@typescript-eslint/parser": "5.3.0",
     "codecov": "3.8.3",
     "eslint": "8.1.0",
     "eslint-config-prettier": "8.3.0",
@@ -57,7 +60,8 @@
     "np": "7.5.0",
     "npm-run-all": "4.1.5",
     "prettier": "2.4.1",
-    "remark-cli": "10.0.0"
+    "remark-cli": "10.0.0",
+    "typescript": "4.4.4"
   },
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"

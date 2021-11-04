@@ -13,6 +13,7 @@ const Container = require("postcss/lib/container");
  * literal.type       //=> 'literal'
  * literal.toString() //=> 'a{}'
  */
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'Literal'.
 class Literal extends Container {
   constructor(defaults) {
     super(defaults);
