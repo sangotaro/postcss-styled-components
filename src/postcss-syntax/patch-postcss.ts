@@ -1,5 +1,6 @@
 "use strict";
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'path'.
 const path = require("path");
 const patched = {};
 
@@ -47,6 +48,7 @@ function patchNode(Node) {
   };
 }
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'patch'.
 function patch(Document) {
   let fn;
   let file;

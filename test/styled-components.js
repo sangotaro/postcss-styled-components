@@ -1,7 +1,7 @@
 "use strict";
 
 const fs = require("fs");
-const syntax = require("../lib");
+const syntax = require("../dist");
 
 describe("styled-components", () => {
   it("basic", () => {

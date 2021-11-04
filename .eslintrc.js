@@ -1,5 +1,6 @@
 "use strict";
 
+/** @type {import('@typescript-eslint/experimental-utils').TSESLint.Linter.Config} */
 module.exports = {
   root: true,
   parserOptions: {
@@ -11,6 +12,7 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:eslint-comments/recommended",
     "plugin:node/recommended",
     "plugin:jest/recommended",
@@ -18,6 +20,11 @@ module.exports = {
     "plugin:regexp/recommended",
     "prettier",
   ],
+  settings: {
+    node: {
+      tryExtensions: [".ts", ".js", ".json", ".node"],
+    },
+  },
   rules: {
     "array-callback-return": "error",
     "dot-notation": "error",
@@ -113,10 +120,11 @@ module.exports = {
     "prefer-spread": "error",
     "prefer-template": "error",
     "sort-imports": ["error", { allowSeparatedGroups: true }],
-
+    strict: ["error", "global"],
     // Prefer code readability, e.g. `[0-9A-Za-z]`.
     "regexp/prefer-d": "off",
 
-    strict: ["error", "global"],
+    // for ts migration rule
+    "@typescript-eslint/no-var-requires": "warn",
   },
 };
