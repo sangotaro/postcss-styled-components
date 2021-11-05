@@ -1,18 +1,13 @@
 "use strict";
 
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'reNewLine'... Remove this comment to see the full error message
+import { getSyntax } from "./get-syntax";
+
 // eslint-disable-next-line regexp/no-useless-non-capturing-group, regexp/no-useless-flag
 const reNewLine = /(?:\r?\n|\r)/gm;
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'Document'.
 const Document = require("./document");
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'getSyntax'... Remove this comment to see the full error message
-const getSyntax = require("./get-syntax");
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'Input'.
 const Input = require("postcss/lib/input");
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'patch'.
 const patch = require("./patch-postcss");
 
-// @ts-expect-error ts-migrate(2300) FIXME: Duplicate identifier 'LocalFixer'.
 class LocalFixer {
   constructor(lines, style) {
     let line = 0;
@@ -107,7 +102,6 @@ class LocalFixer {
   }
 }
 
-// @ts-expect-error TS2393: Duplicate function implementation.
 function docFixer(source, opts) {
   let match;
   const lines = [];
@@ -120,12 +114,10 @@ function docFixer(source, opts) {
 
   // eslint-disable-next-line no-shadow
   return function parseStyle(style) {
-    // @ts-expect-error ts-migrate(2554) FIXME: Expected 4 arguments, but got 2.
     return new LocalFixer(lines, style).parse(opts);
   };
 }
 
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'parseStyle... Remove this comment to see the full error message
 function parseStyle(source, opts, styles) {
   patch(Document);
 

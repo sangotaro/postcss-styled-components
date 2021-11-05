@@ -1,8 +1,6 @@
 "use strict";
 
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'getTemplat... Remove this comment to see the full error message
-const getTemplate = require("./get-template");
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'loadSyntax... Remove this comment to see the full error message
+import { getTemplate } from "./get-template";
 const loadSyntax = require("./postcss-syntax/load-syntax");
 const { parse, types, traverse, loadOptions } = require("@babel/core");
 

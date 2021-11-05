@@ -1,13 +1,11 @@
 "use strict";
 
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'helper'.
+import { templateTokenize } from "./template-tokenize";
+
 const helper = require("./template-parser-helper");
 const Parser = require("postcss/lib/parser");
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'templateTo... Remove this comment to see the full error message
-const templateTokenize = require("./template-tokenize");
 
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'TemplatePa... Remove this comment to see the full error message
-class TemplateParser extends Parser {
+export class TemplateParser extends Parser {
   createTokenizer() {
     this.tokenizer = templateTokenize(this.input);
   }
@@ -18,4 +16,3 @@ class TemplateParser extends Parser {
     return helper.freeSemicolon.call(this, token);
   }
 }
-module.exports = TemplateParser;

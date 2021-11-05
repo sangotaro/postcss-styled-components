@@ -1,9 +1,8 @@
 "use strict";
 
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'Input'.
+import { TemplateParser } from "./template-parser";
+
 const Input = require("postcss/lib/input");
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'TemplatePa... Remove this comment to see the full error message
-const TemplateParser = require("./template-parser");
 
 function templateParse(css, opts) {
   const input = new Input(css, opts);
@@ -11,6 +10,7 @@ function templateParse(css, opts) {
   input.quasis = opts.quasis;
   input.templateLiteralStyles = opts.templateLiteralStyles;
   input.parseOptions = opts;
+  // @ts-expect-error TS2554: Expected 0 arguments, but got 1
   const parser = new TemplateParser(input);
 
   parser.parse();

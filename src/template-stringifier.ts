@@ -2,8 +2,7 @@
 
 const Stringifier = require("postcss/lib/stringifier");
 
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'TemplateSt... Remove this comment to see the full error message
-class TemplateStringifier extends Stringifier {
+export class TemplateStringifier extends Stringifier {
   literal(node) {
     if (node.nodes && node.nodes.length) {
       node.nodes.forEach((root) => {
@@ -20,5 +19,3 @@ class TemplateStringifier extends Stringifier {
     }
   }
 }
-
-module.exports = TemplateStringifier;

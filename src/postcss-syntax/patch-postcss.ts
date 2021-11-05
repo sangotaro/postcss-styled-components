@@ -1,6 +1,5 @@
 "use strict";
 
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'path'.
 const path = require("path");
 const patched = {};
 
@@ -48,12 +47,12 @@ function patchNode(Node) {
   };
 }
 
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'patch'.
 function patch(Document) {
   let fn;
   let file;
 
   if (Document) {
+    // @ts-expect-error TS2554: Expected 1 arguments, but got 0.
     patch();
     fn = patchDocument.bind(this, Document);
     file = "lazy-result";
