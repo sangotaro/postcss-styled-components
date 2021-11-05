@@ -1,11 +1,10 @@
 "use strict";
 
 import { normalOpts } from "./normal-opts";
-
-const parseStyle = require("./parse-style");
+import { parseStyle } from "./parse-style";
 const stringify = require("./stringify");
 
-module.exports = (extract, lang) => {
+export const initSyntax = (extract, lang) => {
   const defaultConfig = {
     postcss: "css",
     stylus: "css",

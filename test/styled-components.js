@@ -1,6 +1,8 @@
 "use strict";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const fs = require("fs");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const syntax = require("../dist");
 
 describe("styled-components", () => {

@@ -1,11 +1,11 @@
 "use strict";
 
+import Input from "postcss/lib/input";
 import { getSyntax } from "./get-syntax";
 
 // eslint-disable-next-line regexp/no-useless-non-capturing-group, regexp/no-useless-flag
 const reNewLine = /(?:\r?\n|\r)/gm;
 const Document = require("./document");
-const Input = require("postcss/lib/input");
 const patch = require("./patch-postcss");
 
 class LocalFixer {
@@ -118,7 +118,7 @@ function docFixer(source, opts) {
   };
 }
 
-function parseStyle(source, opts, styles) {
+export function parseStyle(source, opts, styles) {
   patch(Document);
 
   const document = new Document();
@@ -163,5 +163,3 @@ function parseStyle(source, opts, styles) {
 
   return document;
 }
-
-module.exports = parseStyle;

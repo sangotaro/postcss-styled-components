@@ -1,10 +1,13 @@
 "use strict";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const fs = require("fs");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const spawnSync = require("child_process").spawnSync;
 const files = spawnSync("git", ["ls-files", "lib", "test"], {
   encoding: "utf8",
 }).stdout.match(/^.+\.js$/gm);
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const syntax = require("../dist");
 
 describe("not throw error for non-style js file", () => {

@@ -1,14 +1,14 @@
 "use strict";
 
 import { Literal } from "./literal";
+import postcssParse from "postcss/lib/parse";
 
-const postcssParse = require("postcss/lib/parse");
 // eslint-disable-next-line regexp/no-useless-non-capturing-group, regexp/no-useless-flag
 const reNewLine = /(?:\r?\n|\r)/gm;
 const isLiteral = (token) =>
   token[0] === "word" && /^\$\{[\s\S]*\}$/.test(token[1]);
 
-function literal(start) {
+export function literal(start) {
   if (!isLiteral(start)) {
     return;
   }
@@ -49,6 +49,7 @@ function literal(start) {
     const offset = input.quasis[0].start;
     const nodeIndex = getNodeIndex(node, input);
     const startIndex = offset + nodeIndex;
+    // @ts-expect-error TS2339: Property 'text' does not exist on type 'Literal'.
     const endIndex = startIndex + node.text.length;
     const templateLiteralStyles = input.templateLiteralStyles.filter(
       (style) => style.startIndex <= endIndex && startIndex < style.endIndex
@@ -57,6 +58,7 @@ function literal(start) {
     if (templateLiteralStyles.length) {
       const nodes = parseTemplateLiteralStyles(templateLiteralStyles, input, [
         nodeIndex,
+        // @ts-expect-error TS2339: Property 'text' does not exist on type 'Literal'
         nodeIndex + node.text.length,
       ]);
 
@@ -70,7 +72,7 @@ function literal(start) {
   return node;
 }
 
-function freeSemicolon(token) {
+export function freeSemicolon(token) {
   this.spaces += token[1];
   const nodes = this.current.nodes;
   const prev = nodes && nodes[nodes.length - 1];
@@ -81,11 +83,6 @@ function freeSemicolon(token) {
     this.spaces = "";
   }
 }
-
-module.exports = {
-  freeSemicolon,
-  literal,
-};
 
 function parseTemplateLiteralStyles(styles, input, range) {
   const offset = input.quasis[0].start;

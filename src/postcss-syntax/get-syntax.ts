@@ -1,6 +1,7 @@
 "use strict";
 
-const path = require("path");
+import path from "path";
+
 const reSyntaxCSS = /^(?:post)?css$/i;
 
 function cssSyntax() {

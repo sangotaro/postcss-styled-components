@@ -1,8 +1,8 @@
 "use strict";
 
+import { loadOptions, parse, traverse, types } from "@babel/core";
 import { getTemplate } from "./get-template";
-const loadSyntax = require("./postcss-syntax/load-syntax");
-const { parse, types, traverse, loadOptions } = require("@babel/core");
+import { loadSyntax } from "./postcss-syntax/load-syntax";
 
 const supports = {
   "styled-components": true,
@@ -69,7 +69,7 @@ function loadBabelOpts(opts) {
   return opts;
 }
 
-function literalParser(source, opts, styles) {
+export function extract(source, opts, styles) {
   let ast;
 
   try {
@@ -98,6 +98,7 @@ function literalParser(source, opts, styles) {
         if (types.isObjectProperty(property)) {
           const key = property.key;
 
+          // @ts-expect-error  TS2339: Property 'name' does not exist on type 'Expression'.,  TS2339: Property 'value' does not exist on type 'Expression'.
           nameSpace = nameSpace.concat(key.name || key.value);
           id = property.value;
         } else {
@@ -308,5 +309,3 @@ function literalParser(source, opts, styles) {
 
   return (styles || []).concat(tplLiteralStyles);
 }
-
-module.exports = literalParser;

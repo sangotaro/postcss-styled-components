@@ -1,6 +1,6 @@
 "use strict";
 
-const Container = require("postcss/lib/container");
+import Container from "postcss/lib/container";
 
 /**
  * Represents a JS literal

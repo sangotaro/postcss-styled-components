@@ -1,8 +1,10 @@
 "use strict";
 
+import { freeSemicolon, literal } from "./template-parser-helper";
 import { templateTokenize } from "./template-tokenize";
 
-const helper = require("./template-parser-helper");
+// no dts
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const SafeParser = require("postcss-safe-parser/lib/safe-parser");
 
 export class TemplateSafeParser extends SafeParser {
@@ -10,9 +12,9 @@ export class TemplateSafeParser extends SafeParser {
     this.tokenizer = templateTokenize(this.input, { ignoreErrors: true });
   }
   other(start) {
-    return helper.literal.call(this, start) || super.other.call(this, start);
+    return literal.call(this, start) || super.other.call(this, start);
   }
   freeSemicolon(token) {
-    return helper.freeSemicolon.call(this, token);
+    return freeSemicolon.call(this, token);
   }
 }
