@@ -2,8 +2,7 @@
 
 const tokenize = require("postcss/lib/tokenize");
 
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'templateTo... Remove this comment to see the full error message
-function templateTokenize(input, options = {}) {
+export function templateTokenize(input, options = {}) {
   let pos = input.quasis[0].start;
   const quasis = input.quasis.filter((quasi) => quasi.start !== quasi.end);
   const tokenizer = tokenize(input, options);
@@ -62,5 +61,3 @@ function templateTokenize(input, options = {}) {
 
   return { ...tokenizer, back, nextToken };
 }
-
-module.exports = templateTokenize;

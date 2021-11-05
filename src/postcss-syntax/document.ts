@@ -2,7 +2,6 @@
 
 const PostCssRoot = require("postcss/lib/root");
 
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'Document'.
 class Document extends PostCssRoot {
   toString(stringifier) {
     return super.toString(

@@ -64,7 +64,7 @@ module.exports = {
     "no-useless-return": "error",
     "no-var": "error",
     "node/no-unsupported-features/es-builtins": "error",
-    "node/no-unsupported-features/es-syntax": "error",
+    "node/no-unsupported-features/es-syntax": "off",
     "node/no-unsupported-features/node-builtins": "error",
     "object-shorthand": "error",
     "one-var": ["error", "never"],
