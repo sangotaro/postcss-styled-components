@@ -1,6 +1,8 @@
 "use strict";
 
-const extract = require("./extract");
-const syntax = require("./postcss-syntax/syntax")(extract, "jsx");
+import { extract } from "./extract";
+import { initSyntax } from "./postcss-syntax/syntax";
+
+const syntax = initSyntax(extract, "jsx");
 
 module.exports = syntax;

@@ -4,7 +4,7 @@ import { getSyntax } from "./get-syntax";
 
 const cache = {};
 
-function loadSyntax(opts, id) {
+export function loadSyntax(opts, id) {
   const cssSyntax = getSyntax("css", opts);
   const modulePath = `${id}/template-${
     cssSyntax.parse.name === "safeParse" ? "safe-" : ""
@@ -27,5 +27,3 @@ function loadSyntax(opts, id) {
 
   return syntax;
 }
-
-module.exports = loadSyntax;

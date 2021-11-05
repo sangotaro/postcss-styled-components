@@ -1,6 +1,6 @@
 "use strict";
 
-const PostCssRoot = require("postcss/lib/root");
+import PostCssRoot from "postcss/lib/root";
 
 class Document extends PostCssRoot {
   toString(stringifier) {
@@ -12,6 +12,7 @@ class Document extends PostCssRoot {
   }
 
   each(callback) {
+    // @ts-expect-error TS2339: Property 'each' does not exist on type 'ChildNode'.
     const result = this.nodes.map((node) => node.each(callback));
 
     // eslint-disable-next-line no-shadow
@@ -19,6 +20,7 @@ class Document extends PostCssRoot {
   }
 
   append() {
+    // @ts-expect-error TS2339: Property 'append' does not exist on type 'ChildNode'.
     // eslint-disable-next-line prefer-spread, prefer-rest-params
     this.last.append.apply(this.last, Array.from(arguments));
 
@@ -26,6 +28,7 @@ class Document extends PostCssRoot {
   }
 
   prepend() {
+    // @ts-expect-error TS2339: Property 'prepend' does not exist on type 'ChildNode'.
     // eslint-disable-next-line prefer-spread, prefer-rest-params
     this.first.prepend.apply(this.first, Array.from(arguments));
 
