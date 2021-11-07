@@ -1,8 +1,19 @@
 "use strict";
 
 import { extract } from "./extract";
-import { initSyntax } from "./postcss-syntax/syntax";
+import { parseStyle } from "./postcss-syntax/parse-style";
+import { stringify } from "./postcss-syntax/stringify";
 
-const syntax = initSyntax(extract, "jsx");
+function parse(source, opts) {
+  source = source.toString();
+  const document = parseStyle(source, opts || {}, extract(source, opts));
 
-module.exports = syntax;
+  document.source.lang = "jsx";
+
+  return document;
+}
+
+module.exports = {
+  parse,
+  stringify,
+};

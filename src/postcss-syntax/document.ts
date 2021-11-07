@@ -1,12 +1,13 @@
 "use strict";
 
 import PostCssRoot from "postcss/lib/root";
+import { stringify } from "./stringify";
 
 class Document extends PostCssRoot {
   toString(stringifier) {
     return super.toString(
       stringifier || {
-        stringify: require("./stringify"),
+        stringify,
       }
     );
   }

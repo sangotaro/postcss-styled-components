@@ -21,7 +21,7 @@
     "fmt": "prettier . --write",
     "lint": "npm-run-all --parallel lint:*",
     "lint:fmt": "prettier . --check",
-    "lint:js": "eslint . --cache --max-warnings=5",
+    "lint:js": "eslint . --cache --max-warnings=3",
     "lint:md": "remark . --quiet --frail",
     "release": "np",
     "test": "jest",
@@ -41,8 +41,7 @@
   },
   "dependencies": {
     "@babel/core": ">=7.15.5",
-    "postcss": "8.3.11",
-    "postcss-safe-parser": "6.0.0"
+    "postcss": "8.3.11"
   },
   "devDependencies": {
     "@stylelint/remark-preset": "3.0.0",

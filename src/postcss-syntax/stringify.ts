@@ -1,6 +1,6 @@
 "use strict";
 
-function stringify(document) {
+export function stringify(document) {
   // eslint-disable-next-line no-shadow
   let stringify;
 
@@ -21,5 +21,3 @@ function docStringify(document, builder) {
   });
   builder(document.raws.afterEnd, document, "afterEnd");
 }
-
-module.exports = stringify;

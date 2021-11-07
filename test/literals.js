@@ -185,28 +185,4 @@ describe("template literals", () => {
       expect(node.type).not.toBe("literal");
     });
   });
-
-  describe("template-safe-parse", () => {
-    [
-      "./fixtures/tpl-in-tpl.mjs",
-      "./fixtures/multiline-arrow-function.mjs",
-      "./fixtures/interpolation-content.mjs",
-      "./fixtures/tpl-selector.mjs",
-      "./fixtures/tpl-decl.mjs",
-      "./fixtures/tpl-special.mjs",
-    ].forEach((file) => {
-      it(`${file}`, () => {
-        file = require.resolve(file);
-        const code = fs.readFileSync(file);
-
-        expect(() =>
-          syntax({
-            css: "safe-parser",
-          }).parse(code, {
-            from: "styled-safe-parse.js",
-          })
-        ).not.toThrow();
-      });
-    });
-  });
 });

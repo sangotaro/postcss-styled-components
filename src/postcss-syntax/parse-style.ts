@@ -1,7 +1,13 @@
 "use strict";
 
 import Input from "postcss/lib/input";
-import { getSyntax } from "./get-syntax";
+import postcssParse from "postcss/lib/parse";
+import postcssStringify from "postcss/lib/stringify";
+
+const postcssSyntax = {
+  parse: postcssParse,
+  stringify: postcssStringify,
+};
 
 // eslint-disable-next-line regexp/no-useless-non-capturing-group, regexp/no-useless-flag
 const reNewLine = /(?:\r?\n|\r)/gm;
@@ -69,7 +75,7 @@ class LocalFixer {
   parse(opts) {
     // @ts-expect-error ts-migrate(2339) FIXME: Property 'style' does not exist on type 'LocalFixe... Remove this comment to see the full error message
     const style = this.style;
-    const syntax = style.syntax || getSyntax(style.lang, opts);
+    const syntax = style.syntax || postcssSyntax;
     let root = style.root;
 
     try {
