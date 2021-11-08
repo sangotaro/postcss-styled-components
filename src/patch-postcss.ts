@@ -48,7 +48,7 @@ function patchNode(Node) {
   };
 }
 
-function patch(Document) {
+export function patch(Document) {
   let fn;
   let file;
 
@@ -89,5 +89,3 @@ function findPostcss() {
 
   return Object.keys(result);
 }
-
-module.exports = patch;

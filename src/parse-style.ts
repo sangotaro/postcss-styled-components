@@ -1,6 +1,8 @@
 "use strict";
 
+import { Document } from "./document";
 import Input from "postcss/lib/input";
+import { patch } from "./patch-postcss";
 import postcssParse from "postcss/lib/parse";
 import postcssStringify from "postcss/lib/stringify";
 
@@ -11,8 +13,6 @@ const postcssSyntax = {
 
 // eslint-disable-next-line regexp/no-useless-non-capturing-group, regexp/no-useless-flag
 const reNewLine = /(?:\r?\n|\r)/gm;
-const Document = require("./document");
-const patch = require("./patch-postcss");
 
 class LocalFixer {
   constructor(lines, style) {
@@ -160,6 +160,7 @@ export function parseStyle(source, opts, styles) {
   document.raws.afterEnd = index ? source.slice(index) : source;
   document.source = {
     input: new Input(source, opts),
+    // @ts-expect-error TS2741: Property 'offset' is missing in type '{ line: number; column: number; }' but required in type 'Position'.
     start: {
       line: 1,
       column: 1,

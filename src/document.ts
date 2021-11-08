@@ -3,7 +3,7 @@
 import PostCssRoot from "postcss/lib/root";
 import { stringify } from "./stringify";
 
-class Document extends PostCssRoot {
+export class Document extends PostCssRoot {
   toString(stringifier) {
     return super.toString(
       stringifier || {
@@ -48,4 +48,3 @@ class Document extends PostCssRoot {
     return this;
   }
 }
-module.exports = Document;
