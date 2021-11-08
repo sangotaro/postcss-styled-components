@@ -1,5 +1,3 @@
-"use strict";
-
 /** @type {import('@typescript-eslint/experimental-utils').TSESLint.Linter.Config} */
 module.exports = {
   root: true,
@@ -15,6 +13,8 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:eslint-comments/recommended",
     "plugin:node/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:jest/recommended",
     "plugin:jest/style",
     "plugin:regexp/recommended",
@@ -32,6 +32,34 @@ module.exports = {
     "eslint-comments/no-unused-disable": "error",
     "func-name-matching": "error",
     "guard-for-in": "error",
+    "import/no-default-export": "error",
+    "import/order": [
+      "error",
+      {
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type",
+          "unknown",
+        ],
+        pathGroups: [
+          {
+            pattern: "@alias/**",
+            group: "parent",
+            position: "before",
+          },
+        ],
+        alphabetize: {
+          order: "asc",
+        },
+        "newlines-between": "always",
+      },
+    ],
     "no-confusing-arrow": [
       "error",
       {
@@ -119,8 +147,6 @@ module.exports = {
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
-    "sort-imports": ["error", { allowSeparatedGroups: true }],
-    strict: ["error", "global"],
     // Prefer code readability, e.g. `[0-9A-Za-z]`.
     "regexp/prefer-d": "off",
 

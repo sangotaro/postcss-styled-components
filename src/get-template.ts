@@ -1,5 +1,3 @@
-"use strict";
-
 export function getTemplate(node, source) {
   return source.slice(
     node.quasis[0].start,

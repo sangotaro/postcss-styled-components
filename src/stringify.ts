@@ -1,5 +1,3 @@
-"use strict";
-
 import { Document } from "./document";
 
 function docStringify(document, builder) {

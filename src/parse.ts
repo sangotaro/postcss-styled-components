@@ -1,5 +1,3 @@
-"use strict";
-
 import { extract } from "./extract";
 import { parseStyle } from "./parse-style";
 

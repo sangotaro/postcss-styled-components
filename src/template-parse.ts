@@ -1,6 +1,5 @@
-"use strict";
-
 import Input from "postcss/lib/input";
+
 import { TemplateParser } from "./template-parser";
 
 export function templateParse(css, opts) {

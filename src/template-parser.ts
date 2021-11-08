@@ -1,7 +1,6 @@
-"use strict";
+import Parser from "postcss/lib/parser";
 
 import { freeSemicolon, literal } from "./template-parser-helper";
-import Parser from "postcss/lib/parser";
 import { templateTokenize } from "./template-tokenize";
 
 export class TemplateParser extends Parser {
