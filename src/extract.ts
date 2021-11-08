@@ -1,6 +1,5 @@
-"use strict";
-
 import { loadOptions, parse, traverse, types } from "@babel/core";
+
 import { getTemplate } from "./get-template";
 import { templateParse } from "./template-parse";
 import { templateStringify } from "./template-stringify";

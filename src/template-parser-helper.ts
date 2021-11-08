@@ -1,7 +1,6 @@
-"use strict";
+import postcssParse from "postcss/lib/parse";
 
 import { Literal } from "./literal";
-import postcssParse from "postcss/lib/parse";
 
 // eslint-disable-next-line regexp/no-useless-non-capturing-group, regexp/no-useless-flag
 const reNewLine = /(?:\r?\n|\r)/gm;

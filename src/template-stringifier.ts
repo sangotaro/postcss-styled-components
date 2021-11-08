@@ -1,5 +1,3 @@
-"use strict";
-
 // no dts
 import Stringifier from "postcss/lib/stringifier";
 

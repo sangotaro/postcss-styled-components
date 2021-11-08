@@ -1,5 +1,3 @@
-"use strict";
-
 import { TemplateStringifier } from "./template-stringifier";
 
 export function templateStringify(node, builder) {

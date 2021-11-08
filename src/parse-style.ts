@@ -1,10 +1,9 @@
-"use strict";
-
-import { Document } from "./document";
 import Input from "postcss/lib/input";
-import { patch } from "./patch-postcss";
 import postcssParse from "postcss/lib/parse";
 import postcssStringify from "postcss/lib/stringify";
+
+import { Document } from "./document";
+import { patch } from "./patch-postcss";
 
 const postcssSyntax = {
   parse: postcssParse,

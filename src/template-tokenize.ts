@@ -1,5 +1,3 @@
-"use strict";
-
 // no dts
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const tokenize = require("postcss/lib/tokenize");

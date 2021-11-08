@@ -1,5 +1,3 @@
-"use strict";
-
 import Container from "postcss/lib/container";
 
 /**

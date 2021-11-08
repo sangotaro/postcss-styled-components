@@ -1,6 +1,5 @@
-"use strict";
-
 import PostCssRoot from "postcss/lib/root";
+
 import { stringify } from "./stringify";
 
 export class Document extends PostCssRoot {

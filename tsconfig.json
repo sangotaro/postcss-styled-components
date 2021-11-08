@@ -22,6 +22,26 @@
     /* Type Checking */
     "strict": false,
 
+    // strict mode family
+    "noImplicitAny": false,
+    // "strictNullChecks": true,
+    // "strictFunctionTypes": true,
+    // "strictBindCallApply": true,
+    // "strictPropertyInitialization": true,
+    // "noImplicitThis": true,
+    // "useUnknownInCatchVariables": true,
+    "alwaysStrict": true,
+
+    // not a strict mode family
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    // "exactOptionalPropertyTypes": true,
+    // "noImplicitReturns": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noUncheckedIndexedAccess": true,
+    // "noImplicitOverride": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
     /* Completeness */
     "skipLibCheck": true
   },
