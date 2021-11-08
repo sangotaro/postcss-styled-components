@@ -2,7 +2,8 @@
 
 import { loadOptions, parse, traverse, types } from "@babel/core";
 import { getTemplate } from "./get-template";
-import { loadSyntax } from "./postcss-syntax/load-syntax";
+import { templateParse } from "./template-parse";
+import { templateStringify } from "./template-stringify";
 
 const supports = {
   "styled-components": true,
@@ -69,13 +70,13 @@ function loadBabelOpts(opts) {
   return opts;
 }
 
-export function extract(source, opts, styles) {
+export function extract(source, opts) {
   let ast;
 
   try {
     ast = parse(source, loadBabelOpts(opts));
   } catch (ex) {
-    return styles || [];
+    return [];
   }
 
   const specifiers = new Map();
@@ -139,10 +140,8 @@ export function extract(source, opts, styles) {
     return getNameSpace(path, []).some(function (name, ...args) {
       const result =
         name &&
-        ((Object.prototype.hasOwnProperty.call(supports, name) &&
-          supports[name]) ||
-          (Object.prototype.hasOwnProperty.call(opts.syntax.config, name) &&
-            opts.syntax.config[name]));
+        Object.prototype.hasOwnProperty.call(supports, name) &&
+        supports[name];
 
       switch (typeof result) {
         case "function": {
@@ -262,7 +261,10 @@ export function extract(source, opts, styles) {
       }));
 
       // @ts-expect-error ts-migrate(2339) FIXME: Property 'syntax' does not exist on type '{ startI... Remove this comment to see the full error message
-      style.syntax = loadSyntax(opts, __dirname);
+      style.syntax = {
+        parse: templateParse,
+        stringify: templateStringify,
+      };
       // @ts-expect-error ts-migrate(2339) FIXME: Property 'lang' does not exist on type '{ startInd... Remove this comment to see the full error message
       style.lang = "template-literal";
       // @ts-expect-error ts-migrate(2339) FIXME: Property 'opts' does not exist on type '{ startInd... Remove this comment to see the full error message
@@ -307,5 +309,5 @@ export function extract(source, opts, styles) {
     }
   });
 
-  return (styles || []).concat(tplLiteralStyles);
+  return tplLiteralStyles;
 }

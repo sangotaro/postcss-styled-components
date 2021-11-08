@@ -3,7 +3,7 @@
 import Input from "postcss/lib/input";
 import { TemplateParser } from "./template-parser";
 
-function templateParse(css, opts) {
+export function templateParse(css, opts) {
   const input = new Input(css, opts);
 
   // @ts-expect-error TS2339: Property 'quasis' does not exist on type 'Input'.
@@ -21,5 +21,3 @@ function templateParse(css, opts) {
   // @ts-expect-error TS2339: Property 'root' does not exist on type 'TemplateParser'.
   return parser.root;
 }
-
-module.exports = templateParse;

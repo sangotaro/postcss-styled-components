@@ -186,54 +186,6 @@ describe("styled-components", () => {
     expect(root.nodes).toHaveLength(1);
   });
 
-  it("fix CSS syntax error", () => {
-    // prettier-ignore
-    const code = [
-			"const styled = require(\"styled-components\");",
-			"styled.div`a{`;",
-		].join("\n");
-    const document = syntax({
-      css: "safe-parser",
-    }).parse(code, {
-      from: "postcss-safe-parser.js",
-    });
-
-    // prettier-ignore
-    expect(document.toString()).toBe([
-			"const styled = require(\"styled-components\");",
-			"styled.div`a{}`;",
-		].join("\n"));
-    expect(document.source).toHaveProperty("lang", "jsx");
-    expect(document.nodes).toHaveLength(1);
-    expect(document.first.nodes).toHaveLength(1);
-    expect(document.first.first).toHaveProperty("type", "rule");
-    expect(document.first.first).toHaveProperty("selector", "a");
-  });
-
-  it("fix styled syntax error", () => {
-    // prettier-ignore
-    const code = [
-			"const styled = require(\"styled-components\");",
-			"styled.div`${ a } {`",
-		].join("\n");
-    const document = syntax({
-      css: "safe-parser",
-    }).parse(code, {
-      from: "styled-safe-parse.js",
-    });
-
-    // prettier-ignore
-    expect(document.toString()).toBe([
-			"const styled = require(\"styled-components\");",
-			"styled.div`${ a } {}`",
-		].join("\n"));
-    expect(document.source).toHaveProperty("lang", "jsx");
-    expect(document.nodes).toHaveLength(1);
-    expect(document.first.nodes).toHaveLength(1);
-    expect(document.first.first).toHaveProperty("type", "rule");
-    expect(document.first.first).toHaveProperty("selector", "${ a }");
-  });
-
   it("template literal in prop", () => {
     // prettier-ignore
     const code = [
