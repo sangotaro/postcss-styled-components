@@ -3,9 +3,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": [
     "source.fixAll.eslint",
-    "source.fixAll.stylelint",
-    "source.addMissingImports"
+    "source.fixAll.stylelint"
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": []
+  "cSpell.words": ["quasis", "stringifier"]
 }
