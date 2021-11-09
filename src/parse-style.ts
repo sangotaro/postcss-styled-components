@@ -1,8 +1,10 @@
+import type { ProcessOptions } from "postcss";
 import Input from "postcss/lib/input";
 import postcssParse from "postcss/lib/parse";
 import postcssStringify from "postcss/lib/stringify";
 
 import { Document } from "./document";
+import { extractStyles, Style } from "./extract-styles";
 import { patch } from "./patch-postcss";
 
 const postcssSyntax = {
@@ -14,7 +16,7 @@ const postcssSyntax = {
 const reNewLine = /(?:\r?\n|\r)/gm;
 
 class LocalFixer {
-  constructor(lines, style) {
+  constructor(lines: number[], style: Style) {
     let line = 0;
     let column = style.startIndex;
 
@@ -107,9 +109,9 @@ class LocalFixer {
   }
 }
 
-function docFixer(source, opts) {
-  let match;
-  const lines = [];
+function docFixer(source: string, opts: Pick<ProcessOptions, "map" | "from">) {
+  let match: RegExpExecArray | null;
+  const lines: number[] = [];
 
   reNewLine.lastIndex = 0;
   while ((match = reNewLine.exec(source))) {
@@ -117,27 +119,26 @@ function docFixer(source, opts) {
   }
   lines.push(source.length);
 
-  // eslint-disable-next-line no-shadow
-  return function parseStyle(style) {
+  return function parseStyle(style: Style) {
     return new LocalFixer(lines, style).parse(opts);
   };
 }
 
-export function parseStyle(source, opts, styles) {
+export function parseStyle(
+  source: string,
+  opts: Pick<ProcessOptions, "map" | "from">
+) {
   patch(Document);
 
   const document = new Document();
-
+  const styles = extractStyles(source, opts);
   let index = 0;
 
-  if (styles.length) {
-    // eslint-disable-next-line no-shadow
-    const parseStyle = docFixer(source, opts);
-
+  if (styles.length > 0) {
     styles
       .sort((a, b) => a.startIndex - b.startIndex)
       .forEach((style) => {
-        const root = parseStyle(style);
+        const root = docFixer(source, opts)(style);
 
         if (root) {
           root.raws.beforeStart = source.slice(index, style.startIndex);

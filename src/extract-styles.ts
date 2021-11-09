@@ -1,6 +1,7 @@
 import { loadOptions, parse, traverse, types } from "@babel/core";
+import type { ParseResult, TransformOptions, Visitor } from "@babel/core";
+import { ProcessOptions } from "postcss";
 
-import { getTemplate } from "./get-template";
 import { templateParse } from "./template-parse";
 import { templateStringify } from "./template-stringify";
 
@@ -22,7 +23,7 @@ const plugins = [
   "optionalCatchBinding",
 ];
 
-function loadBabelOpts(opts) {
+function loadBabelOpts(opts): TransformOptions {
   const filename = opts.from && opts.from.replace(/\?.*$/, "");
 
   opts = {
@@ -69,8 +70,79 @@ function loadBabelOpts(opts) {
   return opts;
 }
 
-export function extract(source, opts) {
-  let ast;
+type CssStyle = {
+  lang: "css";
+  startIndex: number;
+  endIndex: number;
+  content: string;
+};
+
+type TemplateLiteralStyle = {
+  lang: "template-literal";
+  startIndex: number;
+  endIndex: number;
+  content: string;
+  opts: {
+    quasis: {
+      start: number;
+      end: number;
+    }[];
+    expressions: {
+      start: number;
+      end: number;
+    }[];
+    templateLiteralStyles: (TemplateLiteralStyle | CssStyle)[];
+  };
+  syntax: {
+    parse: typeof templateParse;
+    stringify: typeof templateStringify;
+  };
+};
+
+export type Style = TemplateLiteralStyle | CssStyle;
+
+function toStyle(source: string, node: types.TemplateLiteral): Style {
+  const quasis = node.quasis.flatMap(({ start, end }) =>
+    start != null && end != null ? [{ start, end }] : []
+  );
+  const startIndex = quasis[0].start;
+  const endIndex = quasis[quasis.length - 1].end;
+
+  if (node.expressions.length > 0) {
+    const expressions = node.expressions.flatMap(({ start, end }) =>
+      start != null && end != null ? [{ start, end }] : []
+    );
+
+    return {
+      lang: "template-literal",
+      startIndex,
+      endIndex,
+      content: source.slice(startIndex, endIndex),
+      opts: {
+        quasis,
+        expressions,
+        templateLiteralStyles: [],
+      },
+      syntax: {
+        parse: templateParse,
+        stringify: templateStringify,
+      },
+    };
+  }
+
+  return {
+    lang: "css",
+    startIndex,
+    endIndex,
+    content: source.slice(startIndex, endIndex),
+  };
+}
+
+export function extractStyles(
+  source: string,
+  opts: Pick<ProcessOptions, "map" | "from">
+): Style[] {
+  let ast: ParseResult | null;
 
   try {
     ast = parse(source, loadBabelOpts(opts));
@@ -80,7 +152,7 @@ export function extract(source, opts) {
 
   const specifiers = new Map();
   const variableDeclarator = new Map();
-  const tplLiteral = new Set();
+  const templateLiterals = new Set<types.TemplateLiteral>();
 
   function setSpecifier(id, nameSpace) {
     nameSpace.unshift(
@@ -156,15 +228,17 @@ export function extract(source, opts) {
     });
   }
 
-  const visitor = {
+  const visitor: Visitor = {
     ImportDeclaration: (path) => {
       const moduleId = path.node.source.value;
 
       path.node.specifiers.forEach((specifier) => {
         const nameSpace = [moduleId];
 
-        if (specifier.imported) {
-          nameSpace.push(specifier.imported.name);
+        if (types.isImportSpecifier(specifier)) {
+          if (types.isIdentifier(specifier.imported)) {
+            nameSpace.push(specifier.imported.name);
+          }
         }
 
         setSpecifier(specifier.local, nameSpace);
@@ -199,95 +273,70 @@ export function extract(source, opts) {
         types.isIdentifier(callee, { name: "require" }) &&
         !path.scope.getBindingIdentifier(callee.name)
       ) {
-        path.node.arguments.filter(types.isStringLiteral).forEach((arg) => {
-          const moduleId = arg.value;
-          const nameSpace = [moduleId];
-          let currPath = path;
+        path.node.arguments
+          .flatMap((arg) => (types.isStringLiteral(arg) ? [arg] : []))
+          .forEach((arg) => {
+            const moduleId = arg.value;
+            const nameSpace = [moduleId];
+            let currentPath = path;
 
-          do {
-            let id = currPath.parent.id;
+            do {
+              // @ts-expect-error TS2339: Property 'id' does not exist on type 'Node'.
+              let id = currentPath.parent.id;
 
-            if (!id) {
-              id = currPath.parent.left;
+              if (!id) {
+                // @ts-expect-error TS2339: Property 'left' does not exist on type 'Node'.
+                id = currentPath.parent.left;
 
-              if (id) {
-                id = path.scope.getBindingIdentifier(id.name) || id;
-              } else {
-                if (types.isIdentifier(currPath.parent.property)) {
-                  nameSpace.push(currPath.parent.property.name);
+                if (id) {
+                  id = path.scope.getBindingIdentifier(id.name) || id;
+                } else {
+                  // @ts-expect-error TS2339: Property 'property' does not exist on type 'Node'.
+                  if (types.isIdentifier(currentPath.parent.property)) {
+                    // @ts-expect-error TS2339: Property 'property' does not exist on type 'Node'.
+                    nameSpace.push(currentPath.parent.property.name);
+                  }
+
+                  // @ts-expect-error TS2322: Type 'NodePath<Node>' is not assignable to type 'NodePath<CallExpression>'.
+                  currentPath = currentPath.parentPath;
+                  continue;
                 }
-
-                currPath = currPath.parentPath;
-                continue;
               }
-            }
 
-            setSpecifier(id, nameSpace);
-            break;
-          } while (currPath);
-        });
+              setSpecifier(id, nameSpace);
+              break;
+            } while (currentPath);
+          });
       }
     },
     TaggedTemplateExpression: (path) => {
       if (isStylePath(path.get("tag"))) {
-        tplLiteral.add(path.node.quasi);
+        templateLiterals.add(path.node.quasi);
       }
     },
   };
 
   traverse(ast, visitor);
 
-  const tplLiteralStyles = [];
+  const styles: Style[] = [];
 
-  Array.from(tplLiteral).forEach((node) => {
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'quasis' does not exist on type 'unknown'... Remove this comment to see the full error message
-    const quasis = node.quasis.map((quasiNode) => ({
-      start: quasiNode.start,
-      end: quasiNode.end,
-    }));
-    const style = {
-      startIndex: quasis[0].start,
-      endIndex: quasis[quasis.length - 1].end,
-      content: getTemplate(node, source),
-    };
+  for (const node of templateLiterals) {
+    const style = toStyle(source, node);
 
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'expressions' does not exist on type 'unk... Remove this comment to see the full error message
-    if (node.expressions.length) {
-      // @ts-expect-error ts-migrate(2339) FIXME: Property 'expressions' does not exist on type 'unk... Remove this comment to see the full error message
-      const expressions = node.expressions.map((expressionNode) => ({
-        start: expressionNode.start,
-        end: expressionNode.end,
-      }));
-
-      // @ts-expect-error ts-migrate(2339) FIXME: Property 'syntax' does not exist on type '{ startI... Remove this comment to see the full error message
-      style.syntax = {
-        parse: templateParse,
-        stringify: templateStringify,
-      };
-      // @ts-expect-error ts-migrate(2339) FIXME: Property 'lang' does not exist on type '{ startInd... Remove this comment to see the full error message
-      style.lang = "template-literal";
-      // @ts-expect-error ts-migrate(2339) FIXME: Property 'opts' does not exist on type '{ startInd... Remove this comment to see the full error message
-      style.opts = {
-        quasis,
-        expressions,
-      };
-    } else {
-      // @ts-expect-error ts-migrate(2339) FIXME: Property 'lang' does not exist on type '{ startInd... Remove this comment to see the full error message
-      style.lang = "css";
-    }
-
-    let parent = null;
-    let targetStyles = tplLiteralStyles;
+    let parent: TemplateLiteralStyle;
+    let targetStyles = styles;
 
     while (targetStyles) {
-      const target = targetStyles.find(
-        (targetStyle) =>
-          targetStyle.opts &&
-          targetStyle.opts.expressions.some(
-            (expr) =>
-              expr.start <= style.startIndex && style.endIndex < expr.end
-          )
-      );
+      const target = targetStyles.flatMap((targetStyle) =>
+        targetStyle.lang === "template-literal" &&
+        targetStyle.opts.expressions.some(
+          (expression) =>
+            expression.start <= style.startIndex &&
+            style.endIndex < expression.end
+        )
+          ? [targetStyle]
+          : []
+      )[0];
 
       if (target) {
         parent = target;
@@ -298,15 +347,11 @@ export function extract(source, opts) {
     }
 
     if (parent) {
-      const templateLiteralStyles =
-        parent.opts.templateLiteralStyles ||
-        (parent.opts.templateLiteralStyles = []);
-
-      templateLiteralStyles.push(style);
+      parent.opts.templateLiteralStyles.push(style);
     } else {
-      tplLiteralStyles.push(style);
+      styles.push(style);
     }
-  });
+  }
 
-  return tplLiteralStyles;
+  return styles;
 }

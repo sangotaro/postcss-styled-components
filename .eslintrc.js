@@ -33,6 +33,7 @@ module.exports = {
     "func-name-matching": "error",
     "guard-for-in": "error",
     "import/no-default-export": "error",
+    "import/no-extraneous-dependencies": "error",
     "import/order": [
       "error",
       {
@@ -44,7 +45,6 @@ module.exports = {
           "sibling",
           "index",
           "object",
-          "type",
           "unknown",
         ],
         pathGroups: [
@@ -58,12 +58,6 @@ module.exports = {
           order: "asc",
         },
         "newlines-between": "always",
-      },
-    ],
-    "no-confusing-arrow": [
-      "error",
-      {
-        allowParens: false,
       },
     ],
     "no-console": [
@@ -80,14 +74,7 @@ module.exports = {
     ],
     "no-implicit-coercion": "error",
     "no-lonely-if": "error",
-    "no-shadow": "error",
     "no-unneeded-ternary": "error",
-    "no-unused-vars": [
-      "error",
-      {
-        ignoreRestSiblings: true,
-      },
-    ],
     "no-use-before-define": ["error", "nofunc"],
     "no-useless-return": "error",
     "no-var": "error",

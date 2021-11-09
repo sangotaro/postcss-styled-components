@@ -15,7 +15,6 @@ export class Document extends PostCssRoot {
     // @ts-expect-error TS2339: Property 'each' does not exist on type 'ChildNode'.
     const result = this.nodes.map((node) => node.each(callback));
 
-    // eslint-disable-next-line no-shadow
     return result.every((result) => result !== false) && result.pop();
   }
 
