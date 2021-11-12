@@ -1,53 +1,54 @@
 import type { ProcessOptions } from "postcss";
 import Input from "postcss/lib/input";
-import postcssParse from "postcss/lib/parse";
-import postcssStringify from "postcss/lib/stringify";
+import defaultParse from "postcss/lib/parse";
+import Root from "postcss/lib/root";
+import defaultStringify from "postcss/lib/stringify";
 
 import { Document } from "./document";
 import { extractStyles, Style } from "./extract-styles";
 import { patch } from "./patch-postcss";
 
-const postcssSyntax = {
-  parse: postcssParse,
-  stringify: postcssStringify,
+const defaultSyntax = {
+  parse: defaultParse,
+  stringify: defaultStringify,
 };
 
 // eslint-disable-next-line regexp/no-useless-non-capturing-group, regexp/no-useless-flag
 const reNewLine = /(?:\r?\n|\r)/gm;
 
 class LocalFixer {
-  constructor(lines: number[], style: Style) {
+  private readonly line: number;
+  private readonly column: number;
+  private readonly style: Style;
+
+  constructor(lineEndIndexes: number[], style: Style) {
     let line = 0;
     let column = style.startIndex;
 
-    // eslint-disable-next-line array-callback-return
-    lines.some((lineEndIndex, lineNumber) => {
+    lineEndIndexes.some((lineEndIndex, lineNumber) => {
       if (lineEndIndex >= style.startIndex) {
         line = lineNumber--;
 
-        if (lineNumber in lines) {
-          column = style.startIndex - lines[lineNumber] - 1;
+        if (lineNumber in lineEndIndexes) {
+          column = style.startIndex - lineEndIndexes[lineNumber] - 1;
         }
 
         return true;
       }
+
+      return false;
     });
 
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'line' does not exist on type 'LocalFixer... Remove this comment to see the full error message
     this.line = line;
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'column' does not exist on type 'LocalFix... Remove this comment to see the full error message
     this.column = column;
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'style' does not exist on type 'LocalFixe... Remove this comment to see the full error message
     this.style = style;
   }
   object(object) {
     if (object) {
       if (object.line === 1) {
-        // @ts-expect-error ts-migrate(2339) FIXME: Property 'column' does not exist on type 'LocalFix... Remove this comment to see the full error message
         object.column += this.column;
       }
 
-      // @ts-expect-error ts-migrate(2339) FIXME: Property 'line' does not exist on type 'LocalFixer... Remove this comment to see the full error message
       object.line += this.line;
     }
   }
@@ -74,36 +75,37 @@ class LocalFixer {
     return error;
   }
   parse(opts) {
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'style' does not exist on type 'LocalFixe... Remove this comment to see the full error message
     const style = this.style;
-    const syntax = style.syntax || postcssSyntax;
-    let root = style.root;
+    let root: Root;
 
     try {
-      root = syntax.parse(style.content, {
-        ...opts,
-        map: false,
-        ...style.opts,
-      });
-    } catch (error) {
-      if (style.ignoreErrors) {
-        return;
+      if (style.lang === "template-literal") {
+        root = style.syntax.parse(style.content, {
+          ...opts,
+          map: false,
+          ...style.opts,
+        });
+        // @ts-expect-error TS2339: Property 'syntax' does not exist on type 'Source'.
+        root.source.syntax = style.syntax;
+      } else {
+        root = defaultSyntax.parse(style.content, { ...opts, map: false });
+        // @ts-expect-error TS2339: Property 'syntax' does not exist on type 'Source'.
+        root.source.syntax = defaultSyntax;
       }
 
-      if (!style.skipConvert) {
-        this.error(error);
-      }
+      // Note:
+      // Stylelint is using inline and lang property.
+      // @ts-expect-error TS2339: Property 'inline' does not exist on type 'Source'.
+      root.source.inline = false;
+      // @ts-expect-error TS2339: Property 'lang' does not exist on type 'Source'.
+      root.source.lang = style.lang;
+    } catch (error) {
+      this.error(error);
 
       throw error;
     }
 
-    if (!style.skipConvert) {
-      this.root(root);
-    }
-
-    root.source.inline = Boolean(style.inline);
-    root.source.lang = style.lang;
-    root.source.syntax = syntax;
+    this.root(root);
 
     return root;
   }
@@ -111,16 +113,16 @@ class LocalFixer {
 
 function docFixer(source: string, opts: Pick<ProcessOptions, "map" | "from">) {
   let match: RegExpExecArray | null;
-  const lines: number[] = [];
+  const lineEndIndexes: number[] = [];
 
   reNewLine.lastIndex = 0;
   while ((match = reNewLine.exec(source))) {
-    lines.push(match.index);
+    lineEndIndexes.push(match.index);
   }
-  lines.push(source.length);
+  lineEndIndexes.push(source.length);
 
   return function parseStyle(style: Style) {
-    return new LocalFixer(lines, style).parse(opts);
+    return new LocalFixer(lineEndIndexes, style).parse(opts);
   };
 }
 
@@ -135,10 +137,12 @@ export function parseStyle(
   let index = 0;
 
   if (styles.length > 0) {
+    const parseStyle = docFixer(source, opts);
+
     styles
       .sort((a, b) => a.startIndex - b.startIndex)
       .forEach((style) => {
-        const root = docFixer(source, opts)(style);
+        const root = parseStyle(style);
 
         if (root) {
           root.raws.beforeStart = source.slice(index, style.startIndex);
@@ -151,7 +155,9 @@ export function parseStyle(
               (style.content || root.source.input.css).length;
           }
 
+          // @ts-expect-error TS2339: Property 'document' does not exist on type 'Root'.
           root.document = document;
+          // @ts-expect-error TS2345: Argument of type 'Root' is not assignable to parameter of type 'ChildNode'.
           document.nodes.push(root);
         }
       });
