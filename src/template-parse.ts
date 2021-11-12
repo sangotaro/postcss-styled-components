@@ -1,12 +1,13 @@
 import type { ProcessOptions } from "postcss";
 import Input from "postcss/lib/input";
+import Root from "postcss/lib/root";
 
 import { TemplateParser } from "./template-parser";
 
 export function templateParse(
   css: string,
   opts: Pick<ProcessOptions, "map" | "from">
-) {
+): Root {
   const input = new Input(css, opts);
 
   // @ts-expect-error TS2339: Property 'quasis' does not exist on type 'Input'.
