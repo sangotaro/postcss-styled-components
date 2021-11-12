@@ -1,5 +1,6 @@
-import type { ProcessOptions } from "postcss";
-import Input from "postcss/lib/input";
+import type { ProcessOptions, ChildNode, Position } from "postcss";
+import CssSyntaxError from "postcss/lib/css-syntax-error";
+import Input, { FilePosition } from "postcss/lib/input";
 import defaultParse from "postcss/lib/parse";
 import Root from "postcss/lib/root";
 import defaultStringify from "postcss/lib/stringify";
@@ -43,7 +44,7 @@ class LocalFixer {
     this.column = column;
     this.style = style;
   }
-  object(object) {
+  object(object: Position | FilePosition | CssSyntaxError) {
     if (object) {
       if (object.line === 1) {
         object.column += this.column;
@@ -52,18 +53,18 @@ class LocalFixer {
       object.line += this.line;
     }
   }
-  node(node) {
+  node(node: Root | ChildNode) {
     this.object(node.source.start);
     this.object(node.source.end);
   }
-  root(root) {
+  root(root: Root) {
     this.node(root);
     root.walk((node) => {
       this.node(node);
     });
   }
-  error(error) {
-    if (error && error.name === "CssSyntaxError") {
+  error(error: unknown) {
+    if (error instanceof CssSyntaxError) {
       this.object(error);
       this.object(error.input);
       error.message = error.message.replace(
@@ -74,7 +75,7 @@ class LocalFixer {
 
     return error;
   }
-  parse(opts) {
+  parse(opts: Pick<ProcessOptions, "map" | "from">) {
     const style = this.style;
     let root: Root;
 
@@ -85,19 +86,15 @@ class LocalFixer {
           map: false,
           ...style.opts,
         });
-        // @ts-expect-error TS2339: Property 'syntax' does not exist on type 'Source'.
         root.source.syntax = style.syntax;
       } else {
         root = defaultSyntax.parse(style.content, { ...opts, map: false });
-        // @ts-expect-error TS2339: Property 'syntax' does not exist on type 'Source'.
         root.source.syntax = defaultSyntax;
       }
 
       // Note:
       // Stylelint is using inline and lang property.
-      // @ts-expect-error TS2339: Property 'inline' does not exist on type 'Source'.
       root.source.inline = false;
-      // @ts-expect-error TS2339: Property 'lang' does not exist on type 'Source'.
       root.source.lang = style.lang;
     } catch (error) {
       this.error(error);
