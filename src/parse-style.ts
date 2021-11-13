@@ -7,7 +7,6 @@ import defaultStringify from "postcss/lib/stringify";
 
 import { Document } from "./document";
 import { extractStyles, Style } from "./extract-styles";
-import { patch } from "./patch-postcss";
 
 const defaultSyntax = {
   parse: defaultParse,
@@ -87,9 +86,11 @@ class LocalFixer {
           ...style.opts,
         });
         root.source.syntax = style.syntax;
+        patchRoot(root, style.syntax);
       } else {
         root = defaultSyntax.parse(style.content, { ...opts, map: false });
         root.source.syntax = defaultSyntax;
+        // patchRoot(root, defaultSyntax);
       }
 
       // Note:
@@ -127,8 +128,6 @@ export function parseStyle(
   source: string,
   opts: Pick<ProcessOptions, "map" | "from">
 ) {
-  patch(Document);
-
   const document = new Document();
   const styles = extractStyles(source, opts);
   let index = 0;
@@ -142,7 +141,17 @@ export function parseStyle(
         const root = parseStyle(style);
 
         if (root) {
-          root.raws.beforeStart = source.slice(index, style.startIndex);
+          root.raws.codeBefore = source.slice(index, style.startIndex);
+
+          // Note: Stylelint is still using this property.
+          Object.defineProperty(root.raws, "beforeStart", {
+            get() {
+              return root.raws.codeBefore;
+            },
+            set(value) {
+              root.raws.codeBefore = value;
+            },
+          });
 
           if (style.endIndex) {
             index = style.endIndex;
@@ -154,13 +163,17 @@ export function parseStyle(
 
           // @ts-expect-error TS2339: Property 'document' does not exist on type 'Root'.
           root.document = document;
-          // @ts-expect-error TS2345: Argument of type 'Root' is not assignable to parameter of type 'ChildNode'.
           document.nodes.push(root);
         }
       });
   }
 
-  document.raws.afterEnd = index ? source.slice(index) : source;
+  const last = document.nodes[document.nodes.length - 1];
+
+  if (last) {
+    last.raws.codeAfter = index ? source.slice(index) : source;
+  }
+
   document.source = {
     input: new Input(source, opts),
     // @ts-expect-error TS2741: Property 'offset' is missing in type '{ line: number; column: number; }' but required in type 'Position'.
@@ -172,4 +185,15 @@ export function parseStyle(
   };
 
   return document;
+}
+
+function patchRoot(root, syntax) {
+  const originalToString = root.toString;
+
+  Object.defineProperty(root, "toString", {
+    enumerable: false,
+    value(stringifier) {
+      return originalToString.call(this, stringifier || syntax);
+    },
+  });
 }

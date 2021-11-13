@@ -1,8 +1,8 @@
-import PostCssRoot from "postcss/lib/root";
+import { Document as PostCssDocument } from "postcss";
 
 import { stringify } from "./stringify";
 
-export class Document extends PostCssRoot {
+export class Document extends PostCssDocument {
   toString(stringifier) {
     return super.toString(
       stringifier || {
@@ -12,24 +12,21 @@ export class Document extends PostCssRoot {
   }
 
   each(callback) {
-    // @ts-expect-error TS2339: Property 'each' does not exist on type 'ChildNode'.
     const result = this.nodes.map((node) => node.each(callback));
 
     return result.every((result) => result !== false) && result.pop();
   }
 
-  append() {
-    // @ts-expect-error TS2339: Property 'append' does not exist on type 'ChildNode'.
-    // eslint-disable-next-line prefer-spread, prefer-rest-params
-    this.last.append.apply(this.last, Array.from(arguments));
+  append(...args) {
+    // eslint-disable-next-line prefer-spread
+    this.last.append.apply(this.last, args);
 
     return this;
   }
 
-  prepend() {
-    // @ts-expect-error TS2339: Property 'prepend' does not exist on type 'ChildNode'.
-    // eslint-disable-next-line prefer-spread, prefer-rest-params
-    this.first.prepend.apply(this.first, Array.from(arguments));
+  prepend(...args) {
+    // eslint-disable-next-line prefer-spread
+    this.first.prepend.apply(this.first, args);
 
     return this;
   }
